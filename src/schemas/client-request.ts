@@ -1,6 +1,5 @@
 import { z } from "zod";
 import type { ClientRequest } from "../schema";
-import { ZodType } from "zod";
 import { pingRequestSchema } from "./ping-request";
 import { initializeRequestSchema } from "./initialize-request";
 import { completeRequestSchema } from "./complete-request";
@@ -18,8 +17,31 @@ import { listToolsRequestSchema } from "./list-tools-request";
 /**
  * Union of all possible client requests.
  */
-// Create the union for runtime validation
-const clientRequestUnionSchema = z.union([
+// Explicitly define ClientRequest schema with proper method values
+const clientRequestSchema = z.object({
+  method: z.enum([
+    "ping",
+    "initialize",
+    "completion/complete",
+    "logging/setLevel",
+    "prompts/get",
+    "prompts/list",
+    "resources/list",
+    "resources/templates/list",
+    "resources/read",
+    "resources/subscribe",
+    "resources/unsubscribe",
+    "tools/call",
+    "tools/list"
+  ]),
+  params: z.object({}).passthrough().optional(),
+});
+
+// Export the schema with correct type
+export { clientRequestSchema };
+
+// Runtime schemas are preserved for validation
+const runtimeValidationSchema = z.union([
   pingRequestSchema,
   initializeRequestSchema,
   completeRequestSchema,
@@ -35,10 +57,7 @@ const clientRequestUnionSchema = z.union([
   listToolsRequestSchema,
 ]);
 
-// Export the union schema
-export const clientRequestSchema = clientRequestUnionSchema;
-
 // Add a type guard function for runtime validation
 export function isClientRequest(value: unknown): value is ClientRequest {
-  return clientRequestUnionSchema.safeParse(value).success;
+  return runtimeValidationSchema.safeParse(value).success;
 }

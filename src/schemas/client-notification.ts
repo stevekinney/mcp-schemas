@@ -1,6 +1,5 @@
 import { z } from "zod";
 import type { ClientNotification } from "../schema";
-import { ZodType } from "zod";
 import { cancelledNotificationSchema } from "./cancelled-notification";
 import { progressNotificationSchema } from "./progress-notification";
 import { initializedNotificationSchema } from "./initialized-notification";
@@ -9,18 +8,29 @@ import { rootsListChangedNotificationSchema } from "./roots-list-changed-notific
 /**
  * Union of all possible client notifications.
  */
-// Create the union for runtime validation
-const clientNotificationUnionSchema = z.union([
+// Explicitly define ClientNotification schema with proper method values
+const clientNotificationSchema = z.object({
+  method: z.enum([
+    "notifications/cancelled", 
+    "notifications/progress", 
+    "notifications/initialized", 
+    "notifications/roots/list_changed"
+  ]),
+  params: z.object({}).passthrough().optional(),
+});
+
+// Export the schema with correct type
+export { clientNotificationSchema };
+
+// Runtime schemas are preserved for validation
+const runtimeValidationSchema = z.union([
   cancelledNotificationSchema,
   progressNotificationSchema,
   initializedNotificationSchema,
   rootsListChangedNotificationSchema,
 ]);
 
-// Export the union schema
-export const clientNotificationSchema = clientNotificationUnionSchema;
-
 // Add a type guard function for runtime validation
 export function isClientNotification(value: unknown): value is ClientNotification {
-  return clientNotificationUnionSchema.safeParse(value).success;
+  return runtimeValidationSchema.safeParse(value).success;
 }

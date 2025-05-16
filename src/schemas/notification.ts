@@ -1,6 +1,5 @@
 import { z } from "zod";
 import type { Notification } from "../schema";
-import { ZodType } from "zod";
 
 /**
  * Defines a basic notification object in the MCP protocol.

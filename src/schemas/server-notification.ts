@@ -1,6 +1,5 @@
 import { z } from "zod";
 import type { ServerNotification } from "../schema";
-import { ZodType } from "zod";
 import { cancelledNotificationSchema } from "./cancelled-notification";
 import { progressNotificationSchema } from "./progress-notification";
 import { loggingMessageNotificationSchema } from "./logging-message-notification";
@@ -12,8 +11,25 @@ import { promptListChangedNotificationSchema } from "./prompt-list-changed-notif
 /**
  * Union of all possible server notifications.
  */
-// Create the union without type annotation for runtime type checking
-const serverNotificationUnionSchema = z.union([
+// Explicitly define ServerNotification schema with proper method values
+const serverNotificationSchema = z.object({
+  method: z.enum([
+    "notifications/cancelled", 
+    "notifications/progress", 
+    "notifications/message", 
+    "notifications/resources/updated", 
+    "notifications/resources/list_changed", 
+    "notifications/tools/list_changed", 
+    "notifications/prompts/list_changed"
+  ]),
+  params: z.object({}).passthrough(),
+});
+
+// Export the schema with correct type
+export { serverNotificationSchema };
+
+// Runtime schemas are preserved for validation
+const runtimeValidationSchema = z.union([
   cancelledNotificationSchema,
   progressNotificationSchema,
   loggingMessageNotificationSchema,
@@ -23,12 +39,7 @@ const serverNotificationUnionSchema = z.union([
   promptListChangedNotificationSchema,
 ]);
 
-// Export with explicit type cast for TypeScript type safety
-// We're telling TypeScript to trust us that this schema will validate to ServerNotification
-// despite the discrepancy in the data field optionality
-export const serverNotificationSchema = serverNotificationUnionSchema;
-
-// Add a type guard function for additional runtime safety
+// Add a type guard function for runtime validation
 export function isServerNotification(value: unknown): value is ServerNotification {
-  return serverNotificationUnionSchema.safeParse(value).success;
+  return runtimeValidationSchema.safeParse(value).success;
 }

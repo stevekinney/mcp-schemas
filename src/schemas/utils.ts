@@ -1,29 +1,27 @@
 import { z } from "zod";
-import { requestSchema } from "./request";
-import { notificationSchema } from "./notification";
 import type { Request, Notification } from "../schema";
 
+/**
+ * Creates a request schema with a specific method and params
+ */
 export function withRequest<M extends string, T extends z.ZodRawShape>(
   method: M,
   params: T,
-): z.ZodObject<{
-  method: z.ZodLiteral<M>;
-  params: z.ZodObject<T, "strip", z.ZodTypeAny>;
-}> {
-  return requestSchema.extend({
+) {
+  return z.object({
     method: z.literal(method),
     params: z.object(params),
   });
 }
 
+/**
+ * Creates a notification schema with a specific method and params
+ */
 export function withNotification<M extends string, T extends z.ZodRawShape>(
   method: M,
   params: T,
-): z.ZodObject<{
-  method: z.ZodLiteral<M>;
-  params: z.ZodObject<T, "strip", z.ZodTypeAny>;
-}> {
-  return notificationSchema.extend({
+) {
+  return z.object({
     method: z.literal(method),
     params: z.object(params),
   });

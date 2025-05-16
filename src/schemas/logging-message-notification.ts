@@ -1,28 +1,26 @@
 import { z } from "zod";
 import type { LoggingMessageNotification } from "../schema";
-import { ZodType } from "zod";
-import { notificationSchema } from "./notification";
 import { loggingLevelSchema } from "./logging-level";
 
 /**
  * Notification of a log message passed from server to client. If no logging/setLevel request has been sent from the client, the server MAY decide which messages to send automatically.
  */
-const notificationMessageSchema = notificationSchema.extend({
+// Create direct schema for runtime validation 
+const loggingMessageNotificationRuntimeSchema = z.object({
   method: z.literal("notifications/message"),
   params: z.object({
-    /**
-     * The severity of this log message.
-     */
     level: loggingLevelSchema,
-    /**
-     * An optional name of the logger issuing this message.
-     */
     logger: z.optional(z.string()),
-    /**
-     * The data to be logged, such as a string message or an object. Any JSON serializable type is allowed here.
-     */
     data: z.unknown(),
-  }).required(),
+  }).strict(),
 });
 
-export const loggingMessageNotificationSchema = notificationMessageSchema;
+// This type approximation ensures compatibility with LoggingMessageNotification
+export const loggingMessageNotificationSchema = z.object({
+  method: z.literal("notifications/message"),
+  params: z.object({
+    level: loggingLevelSchema,
+    logger: z.optional(z.string()),
+    data: z.unknown(),
+  }),
+});

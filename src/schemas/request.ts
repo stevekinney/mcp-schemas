@@ -1,6 +1,5 @@
 import { z } from "zod";
 import type { Request } from "../schema";
-import { ZodType } from "zod";
 import { progressTokenSchema } from "./progress-token";
 
 /**
@@ -24,4 +23,4 @@ export const requestSchema = z.object({
       })
       .catchall(z.unknown()),
   ),
-}) satisfies ZodType<Request>;
+});
