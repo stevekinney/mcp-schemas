@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ServerResult } from '../schema';
+import type { ServerResult, JSONRPCResponse } from '../schema';
 import type { ZodType } from 'zod';
 import { emptyResultSchema } from './empty-result';
 import { initializeResultSchema } from './initialize-result';
@@ -26,4 +26,4 @@ export const serverResultSchema = z.union([
   readResourceResultSchema,
   callToolResultSchema,
   listToolsResultSchema,
-]) satisfies ZodType<ServerResult>;
+]) satisfies ZodType<ServerResult & JSONRPCResponse>;

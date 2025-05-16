@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ListResourceTemplatesResult } from '../schema';
+import type { ListResourceTemplatesResult, JSONRPCResponse } from '../schema';
 import type { ZodType } from 'zod';
 import { paginatedResultSchema } from './paginated-result';
 import { resourceTemplateSchema } from './resource-template';
@@ -9,4 +9,4 @@ import { resourceTemplateSchema } from './resource-template';
  */
 export const listResourceTemplatesResultSchema = paginatedResultSchema.extend({
   resourceTemplates: z.array(resourceTemplateSchema),
-}) satisfies ZodType<ListResourceTemplatesResult>;
+}) satisfies ZodType<ListResourceTemplatesResult & JSONRPCResponse>;

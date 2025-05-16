@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ServerNotification } from '../schema';
+import type { ServerNotification, JSONRPCNotification } from '../schema';
 import { cancelledNotificationSchema } from './cancelled-notification';
 import { loggingMessageNotificationSchema } from './logging-message-notification';
 import { progressNotificationSchema } from './progress-notification';
@@ -7,12 +7,13 @@ import { promptListChangedNotificationSchema } from './prompt-list-changed-notif
 import { resourceListChangedNotificationSchema } from './resource-list-changed-notification';
 import { resourceUpdatedNotificationSchema } from './resource-updated-notification';
 import { toolListChangedNotificationSchema } from './tool-list-changed-notification';
+import { jsonRpcNotificationSchema } from './jsonrpc-notification';
 
 /**
  * Union of all possible server notifications.
  */
 // Explicitly define ServerNotification schema with proper method values
-const serverNotificationSchema = z.object({
+const serverNotificationSchema = jsonRpcNotificationSchema.extend({
   method: z.enum([
     'notifications/cancelled',
     'notifications/progress',
@@ -41,6 +42,6 @@ const runtimeValidationSchema = z.union([
 ]);
 
 // Add a type guard function for runtime validation
-export function isServerNotification(value: unknown): value is ServerNotification {
+export function isServerNotification(value: unknown): value is ServerNotification & JSONRPCNotification {
   return runtimeValidationSchema.safeParse(value).success;
 }

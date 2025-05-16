@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import type { ListRootsResult } from '../schema';
+import type { ListRootsResult, JSONRPCResponse } from '../schema';
 import type { ZodType } from 'zod';
-import { resultSchema } from './result';
+import { jsonRpcResponseSchema } from './jsonrpc-response';
 import { rootSchema } from './root';
 
 /**
@@ -9,6 +9,6 @@ import { rootSchema } from './root';
  * This result contains an array of Root objects, each representing a root directory
  * or file that the server can operate on.
  */
-export const listRootsResultSchema = resultSchema.extend({
+export const listRootsResultSchema = jsonRpcResponseSchema.extend({
   roots: z.array(rootSchema),
-}) satisfies ZodType<ListRootsResult>;
+}) satisfies ZodType<ListRootsResult & JSONRPCResponse>;

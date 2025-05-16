@@ -1,12 +1,12 @@
 import { z } from 'zod';
-import type { SubscribeRequest } from '../schema';
+import type { SubscribeRequest, JSONRPCRequest } from '../schema';
 import type { ZodType } from 'zod';
-import { requestSchema } from './request';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * Sent from the client to request resources/updated notifications from the server whenever a particular resource changes.
  */
-export const subscribeRequestSchema = requestSchema.extend({
+export const subscribeRequestSchema = jsonRpcRequestSchema.extend({
   method: z.literal('resources/subscribe'),
   params: z.object({
     /**
@@ -14,4 +14,4 @@ export const subscribeRequestSchema = requestSchema.extend({
      */
     uri: z.string().url(),
   }),
-}) satisfies ZodType<SubscribeRequest>;
+}) satisfies ZodType<SubscribeRequest & JSONRPCRequest>;

@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ListToolsResult } from '../schema';
+import type { ListToolsResult, JSONRPCResponse } from '../schema';
 import type { ZodType } from 'zod';
 import { paginatedResultSchema } from './paginated-result';
 import { toolSchema } from './tool';
@@ -9,4 +9,4 @@ import { toolSchema } from './tool';
  */
 export const listToolsResultSchema = paginatedResultSchema.extend({
   tools: z.array(toolSchema),
-}) satisfies ZodType<ListToolsResult>;
+}) satisfies ZodType<ListToolsResult & JSONRPCResponse>;

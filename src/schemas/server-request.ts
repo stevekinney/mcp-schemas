@@ -3,12 +3,13 @@ import type { ServerRequest } from '../schema';
 import { pingRequestSchema } from './ping-request';
 import { createMessageRequestSchema } from './create-message-request';
 import { listRootsRequestSchema } from './list-roots-request';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * Union of all possible server requests.
  */
 // Explicitly define ServerRequest schema with proper method values
-const serverRequestSchema = z.object({
+const serverRequestSchema = jsonRpcRequestSchema.extend({
   method: z.enum(['ping', 'sampling/createMessage', 'roots/list']),
   params: z.object({}).passthrough().optional(),
 });

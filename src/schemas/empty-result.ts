@@ -1,8 +1,8 @@
 import { type ZodType } from 'zod';
-import type { EmptyResult } from '../schema';
-import { resultSchema } from './result';
+import type { EmptyResult, JSONRPCResponse } from '../schema';
+import { jsonRpcResponseSchema } from './jsonrpc-response';
 
 /**
  * A response that indicates success but carries no data.
  */
-export const emptyResultSchema = resultSchema satisfies ZodType<EmptyResult>;
+export const emptyResultSchema = jsonRpcResponseSchema satisfies ZodType<EmptyResult & JSONRPCResponse>;

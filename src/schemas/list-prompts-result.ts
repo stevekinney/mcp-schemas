@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ListPromptsResult } from '../schema';
+import type { ListPromptsResult, JSONRPCResponse } from '../schema';
 import type { ZodType } from 'zod';
 import { paginatedResultSchema } from './paginated-result';
 import { promptSchema } from './prompt';
@@ -9,4 +9,4 @@ import { promptSchema } from './prompt';
  */
 export const listPromptsResultSchema = paginatedResultSchema.extend({
   prompts: z.array(promptSchema),
-}) satisfies ZodType<ListPromptsResult>;
+}) satisfies ZodType<ListPromptsResult & JSONRPCResponse>;

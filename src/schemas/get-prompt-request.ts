@@ -1,11 +1,11 @@
 import { z, type ZodType } from 'zod';
-import type { GetPromptRequest } from '../schema';
-import { requestSchema } from './request';
+import type { GetPromptRequest, JSONRPCRequest } from '../schema';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * Used by the client to get a prompt provided by the server.
  */
-export const getPromptRequestSchema = requestSchema.extend({
+export const getPromptRequestSchema = jsonRpcRequestSchema.extend({
   method: z.literal('prompts/get'),
   params: z.object({
     /**
@@ -17,4 +17,4 @@ export const getPromptRequestSchema = requestSchema.extend({
      */
     arguments: z.optional(z.record(z.string(), z.string())),
   }),
-}) satisfies ZodType<GetPromptRequest>;
+}) satisfies ZodType<GetPromptRequest & JSONRPCRequest>;

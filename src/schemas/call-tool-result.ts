@@ -1,9 +1,9 @@
 import { z, type ZodType } from 'zod';
-import type { CallToolResult } from '../schema';
+import type { CallToolResult, JSONRPCResponse } from '../schema';
 import { audioContentSchema } from './audio-content';
 import { embeddedResourceSchema } from './embedded-resource';
 import { imageContentSchema } from './image-content';
-import { resultSchema } from './result';
+import { jsonRpcResponseSchema } from './jsonrpc-response';
 import { textContentSchema } from './text-content';
 
 /**
@@ -18,7 +18,7 @@ import { textContentSchema } from './text-content';
  * server does not support tool calls, or any other exceptional conditions,
  * should be reported as an MCP error response.
  */
-export const callToolResultSchema = resultSchema.extend({
+export const callToolResultSchema = jsonRpcResponseSchema.extend({
   content: z.array(z.union([textContentSchema, imageContentSchema, audioContentSchema, embeddedResourceSchema])),
   /**
    * Whether the tool call ended in an error.
@@ -26,4 +26,4 @@ export const callToolResultSchema = resultSchema.extend({
    * If not set, this is assumed to be false (the call was successful).
    */
   isError: z.optional(z.boolean()),
-}) satisfies ZodType<CallToolResult>;
+}) satisfies ZodType<CallToolResult & JSONRPCResponse>;

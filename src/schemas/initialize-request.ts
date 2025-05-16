@@ -1,13 +1,13 @@
 import { z, type ZodType } from 'zod';
-import type { InitializeRequest } from '../schema';
+import type { InitializeRequest, JSONRPCRequest } from '../schema';
 import { clientCapabilitiesSchema } from './client-capabilities';
 import { implementationSchema } from './implementation';
-import { requestSchema } from './request';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * This request is sent from the client to the server when it first connects, asking it to begin initialization.
  */
-export const initializeRequestSchema = requestSchema.extend({
+export const initializeRequestSchema = jsonRpcRequestSchema.extend({
   method: z.literal('initialize'),
   params: z.object({
     /**
@@ -17,4 +17,4 @@ export const initializeRequestSchema = requestSchema.extend({
     capabilities: clientCapabilitiesSchema,
     clientInfo: implementationSchema,
   }),
-}) satisfies ZodType<InitializeRequest>;
+}) satisfies ZodType<InitializeRequest & JSONRPCRequest>;

@@ -1,7 +1,7 @@
 import { z } from 'zod';
-import type { ListRootsRequest } from '../schema';
+import type { ListRootsRequest, JSONRPCRequest } from '../schema';
 import type { ZodType } from 'zod';
-import { requestSchema } from './request';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * Sent from the server to request a list of root URIs from the client. Roots allow
@@ -12,6 +12,6 @@ import { requestSchema } from './request';
  * This request is typically used when the server needs to understand the file system
  * structure or access specific locations that the client has permission to read from.
  */
-export const listRootsRequestSchema = requestSchema.extend({
+export const listRootsRequestSchema = jsonRpcRequestSchema.extend({
   method: z.literal('roots/list'),
-}) satisfies ZodType<ListRootsRequest>;
+}) satisfies ZodType<ListRootsRequest & JSONRPCRequest>;

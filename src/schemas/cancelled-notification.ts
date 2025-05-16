@@ -1,6 +1,6 @@
 import { z, type ZodType } from 'zod';
-import type { CancelledNotification } from '../schema';
-import { notificationSchema } from './notification';
+import type { CancelledNotification, JSONRPCNotification } from '../schema';
+import { jsonRpcNotificationSchema } from './jsonrpc-notification';
 import { requestIdSchema } from './request-id';
 
 /**
@@ -12,7 +12,7 @@ import { requestIdSchema } from './request-id';
  *
  * A client MUST NOT attempt to cancel its `initialize` request.
  */
-export const cancelledNotificationSchema = notificationSchema.extend({
+export const cancelledNotificationSchema = jsonRpcNotificationSchema.extend({
   method: z.literal('notifications/cancelled'),
   params: z.object({
     /**
@@ -26,4 +26,4 @@ export const cancelledNotificationSchema = notificationSchema.extend({
      */
     reason: z.optional(z.string()),
   }),
-}) satisfies ZodType<CancelledNotification>;
+}) satisfies ZodType<CancelledNotification & JSONRPCNotification>;

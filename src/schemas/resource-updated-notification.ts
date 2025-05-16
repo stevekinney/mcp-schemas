@@ -1,12 +1,12 @@
 import { z } from 'zod';
-import type { ResourceUpdatedNotification } from '../schema';
+import type { ResourceUpdatedNotification, JSONRPCNotification } from '../schema';
 import type { ZodType } from 'zod';
-import { notificationSchema } from './notification';
+import { jsonRpcNotificationSchema } from './jsonrpc-notification';
 
 /**
  * A notification from the server to the client, informing it that a resource has changed and may need to be read again. This should only be sent if the client previously sent a resources/subscribe request.
  */
-export const resourceUpdatedNotificationSchema = notificationSchema.extend({
+export const resourceUpdatedNotificationSchema = jsonRpcNotificationSchema.extend({
   method: z.literal('notifications/resources/updated'),
   params: z.object({
     /**
@@ -14,4 +14,4 @@ export const resourceUpdatedNotificationSchema = notificationSchema.extend({
      */
     uri: z.string().url(),
   }),
-}) satisfies ZodType<ResourceUpdatedNotification>;
+}) satisfies ZodType<ResourceUpdatedNotification & JSONRPCNotification>;

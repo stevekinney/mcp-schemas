@@ -1,13 +1,13 @@
 import { z } from 'zod';
-import type { ProgressNotification } from '../schema';
+import type { ProgressNotification, JSONRPCNotification } from '../schema';
 import type { ZodType } from 'zod';
-import { notificationSchema } from './notification';
+import { jsonRpcNotificationSchema } from './jsonrpc-notification';
 import { progressTokenSchema } from './progress-token';
 
 /**
  * An out-of-band notification used to inform the receiver of a progress update for a long-running request.
  */
-export const progressNotificationSchema = notificationSchema.extend({
+export const progressNotificationSchema = jsonRpcNotificationSchema.extend({
   method: z.literal('notifications/progress'),
   params: z.object({
     /**
@@ -27,4 +27,4 @@ export const progressNotificationSchema = notificationSchema.extend({
      */
     message: z.optional(z.string()),
   }),
-}) satisfies ZodType<ProgressNotification>;
+}) satisfies ZodType<ProgressNotification & JSONRPCNotification>;

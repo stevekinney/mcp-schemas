@@ -1,13 +1,13 @@
 import { z, type ZodType } from 'zod';
-import type { CompleteRequest } from '../schema';
+import type { CompleteRequest, JSONRPCRequest } from '../schema';
 import { promptReferenceSchema } from './prompt-reference';
-import { requestSchema } from './request';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 import { resourceReferenceSchema } from './resource-reference';
 
 /**
  * A request from the client to the server, to ask for completion options.
  */
-export const completeRequestSchema = requestSchema.extend({
+export const completeRequestSchema = jsonRpcRequestSchema.extend({
   method: z.literal('completion/complete'),
   params: z.object({
     ref: z.union([promptReferenceSchema, resourceReferenceSchema]),
@@ -25,4 +25,4 @@ export const completeRequestSchema = requestSchema.extend({
       value: z.string(),
     }),
   }),
-}) satisfies ZodType<CompleteRequest>;
+}) satisfies ZodType<CompleteRequest & JSONRPCRequest>;

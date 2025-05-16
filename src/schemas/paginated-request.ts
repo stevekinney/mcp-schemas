@@ -1,13 +1,13 @@
 import { z } from 'zod';
-import type { PaginatedRequest } from '../schema';
+import type { PaginatedRequest, JSONRPCRequest } from '../schema';
 import type { ZodType } from 'zod';
-import { requestSchema } from './request';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 import { cursorSchema } from './cursor';
 
 /**
  * A request that supports pagination.
  */
-export const paginatedRequestSchema = requestSchema.extend({
+export const paginatedRequestSchema = jsonRpcRequestSchema.extend({
   params: z.optional(
     z
       .object({
@@ -20,4 +20,4 @@ export const paginatedRequestSchema = requestSchema.extend({
       })
       .catchall(z.unknown()),
   ),
-}) satisfies ZodType<PaginatedRequest>;
+}) satisfies ZodType<PaginatedRequest & JSONRPCRequest>;

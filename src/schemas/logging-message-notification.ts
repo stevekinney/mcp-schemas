@@ -1,11 +1,12 @@
 import { z } from 'zod';
-import type { LoggingMessageNotification } from '../schema';
+import type { LoggingMessageNotification, JSONRPCNotification } from '../schema';
 import { loggingLevelSchema } from './logging-level';
+import { jsonRpcNotificationSchema } from './jsonrpc-notification';
 
 /**
  * Notification of a log message passed from server to client. If no logging/setLevel request has been sent from the client, the server MAY decide which messages to send automatically.
  */
-export const loggingMessageNotificationSchema = z.object({
+export const loggingMessageNotificationSchema = jsonRpcNotificationSchema.extend({
   method: z.literal('notifications/message'),
   params: z.object({
     /**
@@ -28,4 +29,4 @@ export const loggingMessageNotificationSchema = z.object({
       z.array(z.unknown()),
     ]),
   }),
-}) satisfies z.ZodType<LoggingMessageNotification>;
+}) satisfies z.ZodType<LoggingMessageNotification & JSONRPCNotification>;

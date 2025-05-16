@@ -1,11 +1,11 @@
 import { z, type ZodType } from 'zod';
-import type { CompleteResult } from '../schema';
-import { resultSchema } from './result';
+import type { CompleteResult, JSONRPCResponse } from '../schema';
+import { jsonRpcResponseSchema } from './jsonrpc-response';
 
 /**
  * The server's response to a completion/complete request
  */
-export const completeResultSchema = resultSchema.extend({
+export const completeResultSchema = jsonRpcResponseSchema.extend({
   completion: z.object({
     /**
      * An array of completion values. Must not exceed 100 items.
@@ -20,4 +20,4 @@ export const completeResultSchema = resultSchema.extend({
      */
     hasMore: z.optional(z.boolean()),
   }),
-}) satisfies ZodType<CompleteResult>;
+}) satisfies ZodType<CompleteResult & JSONRPCResponse>;

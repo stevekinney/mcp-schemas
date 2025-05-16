@@ -1,12 +1,12 @@
-import { type ZodType } from 'zod';
-import type { SetLevelRequest } from '../schema';
-import { withRequest } from '../utilities';
+import { z, type ZodType } from 'zod';
+import type { SetLevelRequest, JSONRPCRequest } from '../schema';
 import { loggingLevelParam } from './common-params';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * A request from the client to the server, to enable or adjust logging.
  */
-export const setLevelRequestSchema = withRequest(
-  'logging/setLevel',
-  loggingLevelParam,
-) satisfies ZodType<SetLevelRequest>;
+export const setLevelRequestSchema = jsonRpcRequestSchema.extend({
+  method: z.literal('logging/setLevel'),
+  params: z.object(loggingLevelParam),
+}) satisfies ZodType<SetLevelRequest & JSONRPCRequest>;

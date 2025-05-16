@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ListToolsRequest } from '../schema';
+import type { ListToolsRequest, JSONRPCRequest } from '../schema';
 import type { ZodType } from 'zod';
 import { paginatedRequestSchema } from './paginated-request';
 
@@ -8,4 +8,4 @@ import { paginatedRequestSchema } from './paginated-request';
  */
 export const listToolsRequestSchema = paginatedRequestSchema.extend({
   method: z.literal('tools/list'),
-}) satisfies ZodType<ListToolsRequest>;
+}) satisfies ZodType<ListToolsRequest & JSONRPCRequest>;

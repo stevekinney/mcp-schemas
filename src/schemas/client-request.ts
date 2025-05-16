@@ -13,12 +13,13 @@ import { readResourceRequestSchema } from './read-resource-request';
 import { setLevelRequestSchema } from './set-level-request';
 import { subscribeRequestSchema } from './subscribe-request';
 import { unsubscribeRequestSchema } from './unsubscribe-request';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * Union of all possible client requests.
  */
 // Explicitly define ClientRequest schema with proper method values
-const clientRequestSchema = z.object({
+const clientRequestSchema = jsonRpcRequestSchema.extend({
   method: z.enum([
     'ping',
     'initialize',

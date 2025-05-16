@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { ListResourcesRequest } from '../schema';
+import type { ListResourcesRequest, JSONRPCRequest } from '../schema';
 import type { ZodType } from 'zod';
 import { paginatedRequestSchema } from './paginated-request';
 
@@ -8,4 +8,4 @@ import { paginatedRequestSchema } from './paginated-request';
  */
 export const listResourcesRequestSchema = paginatedRequestSchema.extend({
   method: z.literal('resources/list'),
-}) satisfies ZodType<ListResourcesRequest>;
+}) satisfies ZodType<ListResourcesRequest & JSONRPCRequest>;
