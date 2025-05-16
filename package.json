@@ -1,6 +1,6 @@
 {
   "name": "mcp-schemas",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Schemas for Model Context Protocol servers",
   "license": "MIT",
   "type": "module",
