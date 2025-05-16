@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { SamplingMessage } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 import { roleSchema } from "./role";
 import { basicContentSchemas } from "./content-schemas";
 

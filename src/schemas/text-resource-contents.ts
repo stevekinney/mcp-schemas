@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { TextResourceContents } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 import { resourceContentsSchema } from "./resource-contents";
 
 /**

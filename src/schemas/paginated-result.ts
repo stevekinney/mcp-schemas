@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { PaginatedResult } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 import { resultSchema } from "./result";
 import { cursorSchema } from "./cursor";
 

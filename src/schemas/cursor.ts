@@ -1,6 +1,5 @@
-import { z } from "zod";
-import type { Cursor } from "../schema";
-import { ZodType } from "zod";
+import { z, type ZodType } from 'zod';
+import type { Cursor } from '../schema';
 
 /**
  * An opaque token used to represent a cursor for pagination.

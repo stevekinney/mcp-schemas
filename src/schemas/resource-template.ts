@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ResourceTemplate } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 import { annotationsSchema } from "./annotations";
 
 /**

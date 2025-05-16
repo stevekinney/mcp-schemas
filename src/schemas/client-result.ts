@@ -1,9 +1,8 @@
-import { z } from "zod";
-import type { ClientResult } from "../schema";
-import { ZodType } from "zod";
-import { emptyResultSchema } from "./empty-result";
-import { createMessageResultSchema } from "./create-message-result";
-import { listRootsResultSchema } from "./list-roots-result";
+import { z, type ZodType } from 'zod';
+import type { ClientResult } from '../schema';
+import { createMessageResultSchema } from './create-message-result';
+import { emptyResultSchema } from './empty-result';
+import { listRootsResultSchema } from './list-roots-result';
 
 /**
  * Union of all possible client results.

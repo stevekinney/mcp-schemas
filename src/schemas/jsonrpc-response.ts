@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { JSONRPCResponse } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 import { requestIdSchema } from "./request-id";
 import { resultSchema } from "./result";
 import { JSONRPC_VERSION_SCHEMA } from "./constants";

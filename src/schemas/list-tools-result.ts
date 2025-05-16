@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ListToolsResult } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 import { paginatedResultSchema } from "./paginated-result";
 import { toolSchema } from "./tool";
 

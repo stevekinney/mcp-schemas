@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { Implementation } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 
 /**
  * Describes the name and version of an MCP implementation.

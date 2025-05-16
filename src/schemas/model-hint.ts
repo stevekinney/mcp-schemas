@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ModelHint } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 
 /**
  * Hints to use for model selection.

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { RequestId } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 
 /**
  * A uniquely identifying ID for a request in JSON-RPC.

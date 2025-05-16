@@ -1,4 +1,4 @@
-import { z, ZodType } from 'zod';
+import { z, type ZodType } from 'zod';
 import type { ReadResourceRequest } from '../schema';
 import { withRequest } from '../utilities';
 import { uriParam } from './common-params';

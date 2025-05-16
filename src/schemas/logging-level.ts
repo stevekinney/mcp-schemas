@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { LoggingLevel } from "../schema";
-import { ZodType } from "zod";
+import type { ZodType } from 'zod';
 
 /**
  * The severity of a log message.

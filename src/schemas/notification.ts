@@ -1,10 +1,10 @@
-import { z } from "zod";
-import type { Notification } from "../schema";
+import { z } from 'zod';
+import type { Notification } from '../schema';
 
 /**
  * Defines a basic notification object in the MCP protocol.
  */
-export const notificationSchema = z.object({
+export const notificationSchema: z.ZodType<Notification> = z.object({
   method: z.string(),
   params: z.optional(
     z

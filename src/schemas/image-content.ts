@@ -1,13 +1,12 @@
-import { z } from "zod";
-import type { ImageContent } from "../schema";
-import { ZodType } from "zod";
-import { annotationsSchema } from "./annotations";
+import { z, type ZodType } from 'zod';
+import type { ImageContent } from '../schema';
+import { annotationsSchema } from './annotations';
 
 /**
  * An image provided to or from an LLM.
  */
 export const imageContentSchema = z.object({
-  type: z.literal("image"),
+  type: z.literal('image'),
   /**
    * The base64-encoded image data.
    */

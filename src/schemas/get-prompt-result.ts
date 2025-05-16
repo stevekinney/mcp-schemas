@@ -1,8 +1,7 @@
-import { z } from "zod";
-import type { GetPromptResult } from "../schema";
-import { ZodType } from "zod";
-import { resultSchema } from "./result";
-import { promptMessageSchema } from "./prompt-message";
+import { z, type ZodType } from 'zod';
+import type { GetPromptResult } from '../schema';
+import { promptMessageSchema } from './prompt-message';
+import { resultSchema } from './result';
 
 /**
  * The server's response to a prompts/get request from the client.

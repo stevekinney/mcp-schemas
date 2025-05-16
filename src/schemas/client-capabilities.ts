@@ -1,7 +1,6 @@
-import { z } from "zod";
-import type { ClientCapabilities } from "../schema";
-import { ZodType } from "zod";
-import { unknownObjectSchema } from "./common-params";
+import { z, type ZodType } from 'zod';
+import type { ClientCapabilities } from '../schema';
+import { unknownObjectSchema } from './common-params';
 
 /**
  * Capabilities a client may support. Known capabilities are defined here, in this schema, but this is not a closed set: any client can define its own, additional capabilities.
