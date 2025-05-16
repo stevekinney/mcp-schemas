@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { JSONRPCBatchResponse } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { jsonrpcResponseSchema } from "./jsonrpc-response";
 import { jsonrpcErrorSchema } from "./jsonrpc-error";
 

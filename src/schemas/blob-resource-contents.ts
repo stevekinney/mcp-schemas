@@ -1,6 +1,6 @@
-import { z, type ZodType } from 'zod';
-import type { BlobResourceContents } from '../schema';
-import { resourceContentsSchema } from './resource-contents';
+import { z, type ZodType } from "zod";
+import type { BlobResourceContents } from "../schema";
+import { resourceContentsSchema } from "./resource-contents";
 
 /**
  * The binary contents of a resource.

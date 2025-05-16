@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ServerCapabilities } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 
 /**
  * Capabilities that a server may support. Known capabilities are defined here, in this schema, but this is not a closed set: any server can define its own, additional capabilities.

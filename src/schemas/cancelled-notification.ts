@@ -1,7 +1,7 @@
-import { z, type ZodType } from 'zod';
-import type { CancelledNotification } from '../schema';
-import { notificationSchema } from './notification';
-import { requestIdSchema } from './request-id';
+import { z, type ZodType } from "zod";
+import type { CancelledNotification } from "../schema";
+import { notificationSchema } from "./notification";
+import { requestIdSchema } from "./request-id";
 
 /**
  * This notification can be sent by either side to indicate that it is cancelling a previously-issued request.
@@ -13,7 +13,7 @@ import { requestIdSchema } from './request-id';
  * A client MUST NOT attempt to cancel its `initialize` request.
  */
 export const cancelledNotificationSchema = notificationSchema.extend({
-  method: z.literal('notifications/cancelled'),
+  method: z.literal("notifications/cancelled"),
   params: z.object({
     /**
      * The ID of the request to cancel.

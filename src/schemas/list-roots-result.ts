@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ListRootsResult } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { resultSchema } from "./result";
 import { rootSchema } from "./root";
 

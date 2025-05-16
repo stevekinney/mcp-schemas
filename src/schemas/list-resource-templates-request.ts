@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ListResourceTemplatesRequest } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { paginatedRequestSchema } from "./paginated-request";
 
 /**

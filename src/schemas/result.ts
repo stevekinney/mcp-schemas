@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { Result } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 
 /**
  * Defines a basic result object in the MCP protocol.

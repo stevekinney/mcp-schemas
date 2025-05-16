@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { PromptReference } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 
 /**
  * Identifies a prompt.

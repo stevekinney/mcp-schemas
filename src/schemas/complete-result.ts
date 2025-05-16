@@ -1,6 +1,6 @@
-import { z, type ZodType } from 'zod';
-import type { CompleteResult } from '../schema';
-import { resultSchema } from './result';
+import { z, type ZodType } from "zod";
+import type { CompleteResult } from "../schema";
+import { resultSchema } from "./result";
 
 /**
  * The server's response to a completion/complete request

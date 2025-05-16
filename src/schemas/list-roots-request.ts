@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ListRootsRequest } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { requestSchema } from "./request";
 
 /**

@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ResourceContents } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 
 /**
  * The contents of a specific resource or sub-resource.

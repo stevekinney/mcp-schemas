@@ -1,9 +1,9 @@
-import { z } from 'zod';
-import type { ClientNotification } from '../schema';
-import { cancelledNotificationSchema } from './cancelled-notification';
-import { initializedNotificationSchema } from './initialized-notification';
-import { progressNotificationSchema } from './progress-notification';
-import { rootsListChangedNotificationSchema } from './roots-list-changed-notification';
+import { z } from "zod";
+import type { ClientNotification } from "../schema";
+import { cancelledNotificationSchema } from "./cancelled-notification";
+import { initializedNotificationSchema } from "./initialized-notification";
+import { progressNotificationSchema } from "./progress-notification";
+import { rootsListChangedNotificationSchema } from "./roots-list-changed-notification";
 
 /**
  * Union of all possible client notifications.
@@ -11,10 +11,10 @@ import { rootsListChangedNotificationSchema } from './roots-list-changed-notific
 // Explicitly define ClientNotification schema with proper method values
 const clientNotificationSchema = z.object({
   method: z.enum([
-    'notifications/cancelled',
-    'notifications/progress',
-    'notifications/initialized',
-    'notifications/roots/list_changed',
+    "notifications/cancelled",
+    "notifications/progress",
+    "notifications/initialized",
+    "notifications/roots/list_changed",
   ]),
   params: z.object({}).passthrough().optional(),
 });

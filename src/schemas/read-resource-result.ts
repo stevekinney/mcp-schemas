@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ReadResourceResult } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { resultSchema } from "./result";
 import { textResourceContentsSchema } from "./text-resource-contents";
 import { blobResourceContentsSchema } from "./blob-resource-contents";

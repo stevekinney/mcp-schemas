@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ResourceListChangedNotification } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { notificationSchema } from "./notification";
 
 /**

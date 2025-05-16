@@ -1,10 +1,10 @@
-import { z, type ZodType } from 'zod';
-import type { CallToolResult } from '../schema';
-import { audioContentSchema } from './audio-content';
-import { embeddedResourceSchema } from './embedded-resource';
-import { imageContentSchema } from './image-content';
-import { resultSchema } from './result';
-import { textContentSchema } from './text-content';
+import { z, type ZodType } from "zod";
+import type { CallToolResult } from "../schema";
+import { audioContentSchema } from "./audio-content";
+import { embeddedResourceSchema } from "./embedded-resource";
+import { imageContentSchema } from "./image-content";
+import { resultSchema } from "./result";
+import { textContentSchema } from "./text-content";
 
 /**
  * The server's response to a tool call.

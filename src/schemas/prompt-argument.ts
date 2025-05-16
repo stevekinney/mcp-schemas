@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { PromptArgument } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 
 /**
  * Describes an argument that a prompt can accept.

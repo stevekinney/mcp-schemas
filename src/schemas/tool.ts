@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { Tool } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { toolAnnotationsSchema } from "./tool-annotations";
 
 /**

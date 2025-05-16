@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ResourceReference } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 
 /**
  * A reference to a resource or resource template definition.

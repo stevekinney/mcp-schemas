@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { ServerResult } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { emptyResultSchema } from "./empty-result";
 import { initializeResultSchema } from "./initialize-result";
 import { completeResultSchema } from "./complete-result";

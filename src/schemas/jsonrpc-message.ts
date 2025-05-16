@@ -1,6 +1,6 @@
 import { z } from "zod";
 import type { JSONRPCMessage } from "../schema";
-import type { ZodType } from 'zod';
+import type { ZodType } from "zod";
 import { jsonrpcRequestSchema } from "./jsonrpc-request";
 import { jsonrpcNotificationSchema } from "./jsonrpc-notification";
 import { jsonrpcBatchRequestSchema } from "./jsonrpc-batch-request";
