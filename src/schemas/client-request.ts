@@ -6,4 +6,6 @@ import { allClientRequests } from "./schema-registry";
 /**
  * Union of all possible client requests.
  */
-export const clientRequestSchema = z.union(allClientRequests) satisfies ZodType<ClientRequest>;
+export const clientRequestSchema = z.union(
+  allClientRequests,
+) satisfies ZodType<ClientRequest>;

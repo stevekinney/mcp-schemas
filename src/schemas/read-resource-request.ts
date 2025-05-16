@@ -9,5 +9,5 @@ import { uriParam } from "./common-params";
  */
 export const readResourceRequestSchema = withRequest(
   "resources/read",
-  uriParam
+  uriParam,
 ) satisfies ZodType<ReadResourceRequest>;

@@ -6,4 +6,6 @@ import { allClientNotifications } from "./schema-registry";
 /**
  * Union of all possible client notifications.
  */
-export const clientNotificationSchema = z.union(allClientNotifications) satisfies ZodType<ClientNotification>;
+export const clientNotificationSchema = z.union(
+  allClientNotifications,
+) satisfies ZodType<ClientNotification>;

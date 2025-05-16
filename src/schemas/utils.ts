@@ -1,6 +1,6 @@
-import { z } from 'zod';
-import { requestSchema } from './request';
-import { notificationSchema } from './notification';
+import { z } from "zod";
+import { requestSchema } from "./request";
+import { notificationSchema } from "./notification";
 
 export function withRequest<T extends z.ZodRawShape>(
   method: string,

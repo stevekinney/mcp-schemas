@@ -9,5 +9,5 @@ import { loggingLevelParam } from "./common-params";
  */
 export const setLevelRequestSchema = withRequest(
   "logging/setLevel",
-  loggingLevelParam
+  loggingLevelParam,
 ) satisfies ZodType<SetLevelRequest>;

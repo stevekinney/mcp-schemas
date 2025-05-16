@@ -1,6 +1,6 @@
-import { z } from 'zod';
-import { cursorSchema } from './cursor';
-import { loggingLevelSchema } from './logging-level';
+import { z } from "zod";
+import { cursorSchema } from "./cursor";
+import { loggingLevelSchema } from "./logging-level";
 
 /**
  * Common URI parameter

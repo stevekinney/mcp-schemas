@@ -10,9 +10,7 @@ export const clientCapabilitiesSchema = z.object({
   /**
    * Experimental, non-standard capabilities that the client supports.
    */
-  experimental: z.optional(
-    z.record(z.string(), unknownObjectSchema),
-  ),
+  experimental: z.optional(z.record(z.string(), unknownObjectSchema)),
   /**
    * Present if the client supports listing roots.
    */
