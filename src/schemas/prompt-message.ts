@@ -2,10 +2,7 @@ import { z } from "zod";
 import type { PromptMessage } from "../schema";
 import { ZodType } from "zod";
 import { roleSchema } from "./role";
-import { textContentSchema } from "./text-content";
-import { imageContentSchema } from "./image-content";
-import { audioContentSchema } from "./audio-content";
-import { embeddedResourceSchema } from "./embedded-resource";
+import { allContentSchemas } from "./content-schemas";
 
 /**
  * Describes a message returned as part of a prompt.
@@ -15,10 +12,5 @@ import { embeddedResourceSchema } from "./embedded-resource";
  */
 export const promptMessageSchema = z.object({
   role: roleSchema,
-  content: z.union([
-    textContentSchema,
-    imageContentSchema,
-    audioContentSchema,
-    embeddedResourceSchema,
-  ]),
+  content: allContentSchemas,
 }) satisfies ZodType<PromptMessage>;
