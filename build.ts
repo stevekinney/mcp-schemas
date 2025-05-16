@@ -1,7 +1,6 @@
 import { $ } from 'bun';
 
 await $`rm -rf dist`;
-await $`tsc -p tsconfig.build.json`;
 
 await Bun.build({
   entrypoints: ['src/index.ts'],
@@ -13,3 +12,5 @@ await Bun.build({
   console.error(err);
   process.exit(1);
 });
+
+await $`bunx tsc -p tsconfig.build.json`;
