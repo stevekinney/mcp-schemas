@@ -20,4 +20,4 @@ export const serverNotificationSchema = z.union([
   resourceListChangedNotificationSchema,
   toolListChangedNotificationSchema,
   promptListChangedNotificationSchema,
-]) satisfies ZodType<ServerNotification>;
+]) as unknown as ZodType<ServerNotification>;

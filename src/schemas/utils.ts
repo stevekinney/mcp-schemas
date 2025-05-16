@@ -2,8 +2,8 @@ import { z } from "zod";
 import { requestSchema } from "./request";
 import { notificationSchema } from "./notification";
 
-export function withRequest<T extends z.ZodRawShape>(
-  method: string,
+export function withRequest<M extends string, T extends z.ZodRawShape>(
+  method: M,
   params: T,
 ) {
   return requestSchema.extend({
@@ -12,8 +12,8 @@ export function withRequest<T extends z.ZodRawShape>(
   });
 }
 
-export function withNotification<T extends z.ZodRawShape>(
-  method: string,
+export function withNotification<M extends string, T extends z.ZodRawShape>(
+  method: M,
   params: T,
 ) {
   return notificationSchema.extend({

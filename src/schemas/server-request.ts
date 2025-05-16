@@ -12,4 +12,4 @@ export const serverRequestSchema = z.union([
   pingRequestSchema,
   createMessageRequestSchema,
   listRootsRequestSchema,
-]) satisfies ZodType<ServerRequest>;
+]) as unknown as ZodType<ServerRequest>;

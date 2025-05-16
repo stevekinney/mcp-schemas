@@ -15,6 +15,13 @@ import { cancelledNotificationSchema } from "./cancelled-notification";
 import { progressNotificationSchema } from "./progress-notification";
 import { initializedNotificationSchema } from "./initialized-notification";
 import { rootsListChangedNotificationSchema } from "./roots-list-changed-notification";
+import { createMessageRequestSchema } from "./create-message-request";
+import { listRootsRequestSchema } from "./list-roots-request";
+import { loggingMessageNotificationSchema } from "./logging-message-notification";
+import { resourceUpdatedNotificationSchema } from "./resource-updated-notification";
+import { resourceListChangedNotificationSchema } from "./resource-list-changed-notification";
+import { toolListChangedNotificationSchema } from "./tool-list-changed-notification";
+import { promptListChangedNotificationSchema } from "./prompt-list-changed-notification";
 
 /**
  * Registry of all client request schemas
@@ -43,4 +50,26 @@ export const allClientNotifications = [
   progressNotificationSchema,
   initializedNotificationSchema,
   rootsListChangedNotificationSchema,
+];
+
+/**
+ * Registry of all server request schemas
+ */
+export const allServerRequests = [
+  pingRequestSchema,
+  createMessageRequestSchema,
+  listRootsRequestSchema,
+];
+
+/**
+ * Registry of all server notification schemas
+ */
+export const allServerNotifications = [
+  cancelledNotificationSchema,
+  progressNotificationSchema,
+  loggingMessageNotificationSchema,
+  resourceUpdatedNotificationSchema,
+  resourceListChangedNotificationSchema,
+  toolListChangedNotificationSchema,
+  promptListChangedNotificationSchema,
 ];
