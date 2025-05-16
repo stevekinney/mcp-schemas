@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { ClientCapabilities } from "../schema";
 import { ZodType } from "zod";
+import { unknownObjectSchema } from "./common-params";
 
 /**
  * Capabilities a client may support. Known capabilities are defined here, in this schema, but this is not a closed set: any client can define its own, additional capabilities.
@@ -10,7 +11,7 @@ export const clientCapabilitiesSchema = z.object({
    * Experimental, non-standard capabilities that the client supports.
    */
   experimental: z.optional(
-    z.record(z.string(), z.object({}).catchall(z.unknown())),
+    z.record(z.string(), unknownObjectSchema),
   ),
   /**
    * Present if the client supports listing roots.
@@ -26,5 +27,5 @@ export const clientCapabilitiesSchema = z.object({
   /**
    * Present if the client supports sampling from an LLM.
    */
-  sampling: z.optional(z.object({}).catchall(z.unknown())),
+  sampling: z.optional(unknownObjectSchema),
 }) satisfies ZodType<ClientCapabilities>;
