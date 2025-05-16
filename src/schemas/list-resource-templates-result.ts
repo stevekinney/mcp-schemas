@@ -1,8 +1,8 @@
-import { z } from "zod";
-import type { ListResourceTemplatesResult } from "../schema";
-import type { ZodType } from "zod";
-import { paginatedResultSchema } from "./paginated-result";
-import { resourceTemplateSchema } from "./resource-template";
+import { z } from 'zod';
+import type { ListResourceTemplatesResult } from '../schema';
+import type { ZodType } from 'zod';
+import { paginatedResultSchema } from './paginated-result';
+import { resourceTemplateSchema } from './resource-template';
 
 /**
  * The server's response to a resources/templates/list request from the client.

@@ -1,6 +1,6 @@
-import { z } from "zod";
-import type { ServerCapabilities } from "../schema";
-import type { ZodType } from "zod";
+import { z } from 'zod';
+import type { ServerCapabilities } from '../schema';
+import type { ZodType } from 'zod';
 
 /**
  * Capabilities that a server may support. Known capabilities are defined here, in this schema, but this is not a closed set: any server can define its own, additional capabilities.
@@ -9,9 +9,7 @@ export const serverCapabilitiesSchema = z.object({
   /**
    * Experimental, non-standard capabilities that the server supports.
    */
-  experimental: z.optional(
-    z.record(z.string(), z.object({}).catchall(z.unknown())),
-  ),
+  experimental: z.optional(z.record(z.string(), z.object({}).catchall(z.unknown()))),
   /**
    * Present if the server supports sending log messages to the client.
    */

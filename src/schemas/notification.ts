@@ -1,5 +1,5 @@
-import { z } from "zod";
-import type { Notification } from "../schema";
+import { z } from 'zod';
+import type { Notification } from '../schema';
 
 /**
  * Defines a basic notification object in the MCP protocol.

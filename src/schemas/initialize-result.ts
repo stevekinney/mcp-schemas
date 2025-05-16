@@ -1,9 +1,9 @@
-import { z } from "zod";
-import type { InitializeResult } from "../schema";
-import type { ZodType } from "zod";
-import { resultSchema } from "./result";
-import { serverCapabilitiesSchema } from "./server-capabilities";
-import { implementationSchema } from "./implementation";
+import { z } from 'zod';
+import type { InitializeResult } from '../schema';
+import type { ZodType } from 'zod';
+import { resultSchema } from './result';
+import { serverCapabilitiesSchema } from './server-capabilities';
+import { implementationSchema } from './implementation';
 
 /**
  * After receiving an initialize request from the client, the server sends this response.

@@ -1,6 +1,6 @@
-import { z } from "zod";
-import type { LoggingLevel } from "../schema";
-import type { ZodType } from "zod";
+import { z } from 'zod';
+import type { LoggingLevel } from '../schema';
+import type { ZodType } from 'zod';
 
 /**
  * The severity of a log message.
@@ -9,12 +9,12 @@ import type { ZodType } from "zod";
  * https://datatracker.ietf.org/doc/html/rfc5424#section-6.2.1
  */
 export const loggingLevelSchema = z.enum([
-  "debug",
-  "info",
-  "notice",
-  "warning",
-  "error",
-  "critical",
-  "alert",
-  "emergency",
+  'debug',
+  'info',
+  'notice',
+  'warning',
+  'error',
+  'critical',
+  'alert',
+  'emergency',
 ]) satisfies ZodType<LoggingLevel>;

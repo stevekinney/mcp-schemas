@@ -1,6 +1,6 @@
-import { z } from "zod";
-import type { ToolAnnotations } from "../schema";
-import type { ZodType } from "zod";
+import { z } from 'zod';
+import type { ToolAnnotations } from '../schema';
+import type { ZodType } from 'zod';
 
 /**
  * Additional properties describing a Tool to clients.

@@ -1,15 +1,15 @@
-import { z } from "zod";
-import type { ServerRequest } from "../schema";
-import { pingRequestSchema } from "./ping-request";
-import { createMessageRequestSchema } from "./create-message-request";
-import { listRootsRequestSchema } from "./list-roots-request";
+import { z } from 'zod';
+import type { ServerRequest } from '../schema';
+import { pingRequestSchema } from './ping-request';
+import { createMessageRequestSchema } from './create-message-request';
+import { listRootsRequestSchema } from './list-roots-request';
 
 /**
  * Union of all possible server requests.
  */
 // Explicitly define ServerRequest schema with proper method values
 const serverRequestSchema = z.object({
-  method: z.enum(["ping", "sampling/createMessage", "roots/list"]),
+  method: z.enum(['ping', 'sampling/createMessage', 'roots/list']),
   params: z.object({}).passthrough().optional(),
 });
 
@@ -17,11 +17,7 @@ const serverRequestSchema = z.object({
 export { serverRequestSchema };
 
 // Runtime schemas are preserved for validation
-const runtimeValidationSchema = z.union([
-  pingRequestSchema,
-  createMessageRequestSchema,
-  listRootsRequestSchema,
-]);
+const runtimeValidationSchema = z.union([pingRequestSchema, createMessageRequestSchema, listRootsRequestSchema]);
 
 // Add a type guard function for runtime validation
 export function isServerRequest(value: unknown): value is ServerRequest {

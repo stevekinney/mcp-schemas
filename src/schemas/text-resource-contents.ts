@@ -1,7 +1,7 @@
-import { z } from "zod";
-import type { TextResourceContents } from "../schema";
-import type { ZodType } from "zod";
-import { resourceContentsSchema } from "./resource-contents";
+import { z } from 'zod';
+import type { TextResourceContents } from '../schema';
+import type { ZodType } from 'zod';
+import { resourceContentsSchema } from './resource-contents';
 
 /**
  * The text contents of a resource.

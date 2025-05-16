@@ -1,8 +1,8 @@
-import { z } from "zod";
-import type { JSONRPCError } from "../schema";
-import type { ZodType } from "zod";
-import { requestIdSchema } from "./request-id";
-import { JSONRPC_VERSION_SCHEMA } from "./constants";
+import { z } from 'zod';
+import type { JSONRPCError } from '../schema';
+import type { ZodType } from 'zod';
+import { requestIdSchema } from './request-id';
+import { JSONRPC_VERSION_SCHEMA } from './constants';
 
 /**
  * A response to a request that indicates an error occurred.

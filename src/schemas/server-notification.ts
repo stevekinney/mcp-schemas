@@ -1,12 +1,12 @@
-import { z } from "zod";
-import type { ServerNotification } from "../schema";
-import { cancelledNotificationSchema } from "./cancelled-notification";
-import { loggingMessageNotificationSchema } from "./logging-message-notification";
-import { progressNotificationSchema } from "./progress-notification";
-import { promptListChangedNotificationSchema } from "./prompt-list-changed-notification";
-import { resourceListChangedNotificationSchema } from "./resource-list-changed-notification";
-import { resourceUpdatedNotificationSchema } from "./resource-updated-notification";
-import { toolListChangedNotificationSchema } from "./tool-list-changed-notification";
+import { z } from 'zod';
+import type { ServerNotification } from '../schema';
+import { cancelledNotificationSchema } from './cancelled-notification';
+import { loggingMessageNotificationSchema } from './logging-message-notification';
+import { progressNotificationSchema } from './progress-notification';
+import { promptListChangedNotificationSchema } from './prompt-list-changed-notification';
+import { resourceListChangedNotificationSchema } from './resource-list-changed-notification';
+import { resourceUpdatedNotificationSchema } from './resource-updated-notification';
+import { toolListChangedNotificationSchema } from './tool-list-changed-notification';
 
 /**
  * Union of all possible server notifications.
@@ -14,14 +14,14 @@ import { toolListChangedNotificationSchema } from "./tool-list-changed-notificat
 // Explicitly define ServerNotification schema with proper method values
 const serverNotificationSchema = z.object({
   method: z.enum([
-    "notifications/cancelled",
-    "notifications/progress",
-    "notifications/message",
-    "notifications/resources/updated",
-    "notifications/resources/list_changed",
-    "notifications/tools/list_changed",
-    "notifications/prompts/list_changed",
-    "notifications/example",
+    'notifications/cancelled',
+    'notifications/progress',
+    'notifications/message',
+    'notifications/resources/updated',
+    'notifications/resources/list_changed',
+    'notifications/tools/list_changed',
+    'notifications/prompts/list_changed',
+    'notifications/example',
   ]),
   params: z.object({}).passthrough(),
 });
@@ -41,8 +41,6 @@ const runtimeValidationSchema = z.union([
 ]);
 
 // Add a type guard function for runtime validation
-export function isServerNotification(
-  value: unknown,
-): value is ServerNotification {
+export function isServerNotification(value: unknown): value is ServerNotification {
   return runtimeValidationSchema.safeParse(value).success;
 }

@@ -1,9 +1,9 @@
-import { z } from "zod";
-import type { JSONRPCResponse } from "../schema";
-import type { ZodType } from "zod";
-import { requestIdSchema } from "./request-id";
-import { resultSchema } from "./result";
-import { JSONRPC_VERSION_SCHEMA } from "./constants";
+import { z } from 'zod';
+import type { JSONRPCResponse } from '../schema';
+import type { ZodType } from 'zod';
+import { requestIdSchema } from './request-id';
+import { resultSchema } from './result';
+import { JSONRPC_VERSION_SCHEMA } from './constants';
 
 /**
  * A successful (non-error) response to a request.

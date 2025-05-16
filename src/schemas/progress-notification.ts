@@ -1,14 +1,14 @@
-import { z } from "zod";
-import type { ProgressNotification } from "../schema";
-import type { ZodType } from "zod";
-import { notificationSchema } from "./notification";
-import { progressTokenSchema } from "./progress-token";
+import { z } from 'zod';
+import type { ProgressNotification } from '../schema';
+import type { ZodType } from 'zod';
+import { notificationSchema } from './notification';
+import { progressTokenSchema } from './progress-token';
 
 /**
  * An out-of-band notification used to inform the receiver of a progress update for a long-running request.
  */
 export const progressNotificationSchema = notificationSchema.extend({
-  method: z.literal("notifications/progress"),
+  method: z.literal('notifications/progress'),
   params: z.object({
     /**
      * The progress token which was given in the initial request, used to associate this notification with the request that is proceeding.

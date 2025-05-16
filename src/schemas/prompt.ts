@@ -1,7 +1,7 @@
-import { z } from "zod";
-import type { Prompt } from "../schema";
-import type { ZodType } from "zod";
-import { promptArgumentSchema } from "./prompt-argument";
+import { z } from 'zod';
+import type { Prompt } from '../schema';
+import type { ZodType } from 'zod';
+import { promptArgumentSchema } from './prompt-argument';
 
 /**
  * A prompt or prompt template that the server offers.

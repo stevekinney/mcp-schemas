@@ -1,6 +1,6 @@
-import { z } from "zod";
-import type { Root } from "../schema";
-import type { ZodType } from "zod";
+import { z } from 'zod';
+import type { Root } from '../schema';
+import type { ZodType } from 'zod';
 
 /**
  * Represents a root directory or file that the server can operate on.

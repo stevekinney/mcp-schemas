@@ -1,12 +1,12 @@
-import { z, type ZodType } from "zod";
-import type { AudioContent } from "../schema";
-import { annotationsSchema } from "./annotations";
+import { z, type ZodType } from 'zod';
+import type { AudioContent } from '../schema';
+import { annotationsSchema } from './annotations';
 
 /**
  * Audio provided to or from an LLM.
  */
 export const audioContentSchema = z.object({
-  type: z.literal("audio"),
+  type: z.literal('audio'),
   /**
    * The base64-encoded audio data.
    */

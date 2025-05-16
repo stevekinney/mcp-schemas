@@ -1,12 +1,12 @@
-import { z, type ZodType } from "zod";
-import type { GetPromptRequest } from "../schema";
-import { requestSchema } from "./request";
+import { z, type ZodType } from 'zod';
+import type { GetPromptRequest } from '../schema';
+import { requestSchema } from './request';
 
 /**
  * Used by the client to get a prompt provided by the server.
  */
 export const getPromptRequestSchema = requestSchema.extend({
-  method: z.literal("prompts/get"),
+  method: z.literal('prompts/get'),
   params: z.object({
     /**
      * The name of the prompt or prompt template.

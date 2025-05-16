@@ -1,7 +1,7 @@
-import { z } from "zod";
-import type { ModelPreferences } from "../schema";
-import type { ZodType } from "zod";
-import { modelHintSchema } from "./model-hint";
+import { z } from 'zod';
+import type { ModelPreferences } from '../schema';
+import type { ZodType } from 'zod';
+import { modelHintSchema } from './model-hint';
 
 /**
  * The server's preferences for model selection, requested of the client during sampling.

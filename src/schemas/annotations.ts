@@ -1,6 +1,6 @@
-import { z, type ZodType } from "zod";
-import type { Annotations } from "../schema";
-import { roleSchema } from "./role";
+import { z, type ZodType } from 'zod';
+import type { Annotations } from '../schema';
+import { roleSchema } from './role';
 
 /**
  * Optional annotations for the client. The client can use annotations to inform how objects are used or displayed

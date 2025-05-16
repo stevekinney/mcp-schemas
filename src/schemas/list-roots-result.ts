@@ -1,8 +1,8 @@
-import { z } from "zod";
-import type { ListRootsResult } from "../schema";
-import type { ZodType } from "zod";
-import { resultSchema } from "./result";
-import { rootSchema } from "./root";
+import { z } from 'zod';
+import type { ListRootsResult } from '../schema';
+import type { ZodType } from 'zod';
+import { resultSchema } from './result';
+import { rootSchema } from './root';
 
 /**
  * The client's response to a roots/list request from the server.

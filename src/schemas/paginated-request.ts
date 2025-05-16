@@ -1,8 +1,8 @@
-import { z } from "zod";
-import type { PaginatedRequest } from "../schema";
-import type { ZodType } from "zod";
-import { requestSchema } from "./request";
-import { cursorSchema } from "./cursor";
+import { z } from 'zod';
+import type { PaginatedRequest } from '../schema';
+import type { ZodType } from 'zod';
+import { requestSchema } from './request';
+import { cursorSchema } from './cursor';
 
 /**
  * A request that supports pagination.

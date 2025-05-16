@@ -1,9 +1,9 @@
-import { z } from "zod";
-import type { JSONRPCNotification } from "../schema";
-import { JSONRPC_VERSION } from "../schema";
-import type { ZodType } from "zod";
-import { notificationSchema } from "./notification";
-import { JSONRPC_VERSION_SCHEMA } from "./constants";
+import { z } from 'zod';
+import type { JSONRPCNotification } from '../schema';
+import { JSONRPC_VERSION } from '../schema';
+import type { ZodType } from 'zod';
+import { notificationSchema } from './notification';
+import { JSONRPC_VERSION_SCHEMA } from './constants';
 
 /**
  * A notification which does not expect a response.

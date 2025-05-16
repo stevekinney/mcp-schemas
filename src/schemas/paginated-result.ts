@@ -1,8 +1,8 @@
-import { z } from "zod";
-import type { PaginatedResult } from "../schema";
-import type { ZodType } from "zod";
-import { resultSchema } from "./result";
-import { cursorSchema } from "./cursor";
+import { z } from 'zod';
+import type { PaginatedResult } from '../schema';
+import type { ZodType } from 'zod';
+import { resultSchema } from './result';
+import { cursorSchema } from './cursor';
 
 /**
  * A result that supports pagination.

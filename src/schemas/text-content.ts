@@ -1,13 +1,13 @@
-import { z } from "zod";
-import type { TextContent } from "../schema";
-import type { ZodType } from "zod";
-import { annotationsSchema } from "./annotations";
+import { z } from 'zod';
+import type { TextContent } from '../schema';
+import type { ZodType } from 'zod';
+import { annotationsSchema } from './annotations';
 
 /**
  * Text provided to or from an LLM.
  */
 export const textContentSchema = z.object({
-  type: z.literal("text"),
+  type: z.literal('text'),
   /**
    * The text content of the message.
    */

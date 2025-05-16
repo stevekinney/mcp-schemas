@@ -1,8 +1,8 @@
-import { z } from "zod";
-import type { PromptMessage } from "../schema";
-import type { ZodType } from "zod";
-import { roleSchema } from "./role";
-import { allContentSchemas } from "./content-schemas";
+import { z } from 'zod';
+import type { PromptMessage } from '../schema';
+import type { ZodType } from 'zod';
+import { roleSchema } from './role';
+import { allContentSchemas } from './content-schemas';
 
 /**
  * Describes a message returned as part of a prompt.

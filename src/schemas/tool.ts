@@ -1,7 +1,7 @@
-import { z } from "zod";
-import type { Tool } from "../schema";
-import type { ZodType } from "zod";
-import { toolAnnotationsSchema } from "./tool-annotations";
+import { z } from 'zod';
+import type { Tool } from '../schema';
+import type { ZodType } from 'zod';
+import { toolAnnotationsSchema } from './tool-annotations';
 
 /**
  * Definition for a tool the client can call.
@@ -21,10 +21,8 @@ export const toolSchema = z.object({
    * A JSON Schema object defining the expected parameters for the tool.
    */
   inputSchema: z.object({
-    type: z.literal("object"),
-    properties: z.optional(
-      z.record(z.string(), z.object({}).catchall(z.unknown())),
-    ),
+    type: z.literal('object'),
+    properties: z.optional(z.record(z.string(), z.object({}).catchall(z.unknown()))),
     required: z.optional(z.array(z.string())),
   }),
   /**

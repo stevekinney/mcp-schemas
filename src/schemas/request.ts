@@ -1,6 +1,6 @@
-import { z } from "zod";
-import type { Request } from "../schema";
-import { progressTokenSchema } from "./progress-token";
+import { z } from 'zod';
+import type { Request } from '../schema';
+import { progressTokenSchema } from './progress-token';
 
 /**
  * Defines a basic request object in the MCP protocol.

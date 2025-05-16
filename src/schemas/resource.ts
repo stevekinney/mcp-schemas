@@ -1,7 +1,7 @@
-import { z } from "zod";
-import type { Resource } from "../schema";
-import type { ZodType } from "zod";
-import { annotationsSchema } from "./annotations";
+import { z } from 'zod';
+import type { Resource } from '../schema';
+import type { ZodType } from 'zod';
+import { annotationsSchema } from './annotations';
 
 /**
  * A known resource that the server is capable of reading.
