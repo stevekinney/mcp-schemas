@@ -7,7 +7,7 @@ import { requestIdSchema } from './request-id';
 /**
  * A response to a request that indicates an error occurred.
  */
-export const jsonRpcErrorSchema = z.object({
+export const errorSchema = z.object({
   jsonrpc: JSONRPC_VERSION_SCHEMA,
   id: requestIdSchema,
   error: z.object({

@@ -7,6 +7,6 @@ import { jsonRpcRequestSchema } from './jsonrpc-request';
 /**
  * A JSON-RPC batch request, as described in https://www.jsonrpc.org/specification#batch.
  */
-export const jsonRpcBatchRequestSchema = z.array(
+export const batchRequestSchema = z.array(
   z.union([jsonRpcRequestSchema, jsonRpcNotificationSchema]),
 ) satisfies ZodType<JSONRPCBatchRequest>;

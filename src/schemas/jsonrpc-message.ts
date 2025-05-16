@@ -1,9 +1,9 @@
 import type { ZodType } from 'zod';
 import { z } from 'zod';
 import type { JSONRPCMessage } from '../schema';
-import { jsonRpcBatchRequestSchema } from './jsonrpc-batch-request';
-import { jsonRpcBatchResponseSchema } from './jsonrpc-batch-response';
-import { jsonRpcErrorSchema } from './jsonrpc-error';
+import { batchRequestSchema } from './jsonrpc-batch-request';
+import { batchResponseSchema } from './jsonrpc-batch-response';
+import { errorSchema } from './jsonrpc-error';
 import { jsonRpcNotificationSchema } from './jsonrpc-notification';
 import { jsonRpcRequestSchema } from './jsonrpc-request';
 import { jsonRpcResponseSchema } from './jsonrpc-response';
@@ -14,8 +14,8 @@ import { jsonRpcResponseSchema } from './jsonrpc-response';
 export const jsonRpcMessageSchema = z.union([
   jsonRpcRequestSchema,
   jsonRpcNotificationSchema,
-  jsonRpcBatchRequestSchema,
+  batchRequestSchema,
   jsonRpcResponseSchema,
-  jsonRpcErrorSchema,
-  jsonRpcBatchResponseSchema,
+  errorSchema,
+  batchResponseSchema,
 ]) satisfies ZodType<JSONRPCMessage>;

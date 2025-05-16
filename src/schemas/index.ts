@@ -2,11 +2,7 @@
  * @fileoverview Exports all Zod schemas that validate the MCP types
  */
 
-export * from './jsonrpc-batch-request';
-export * from './jsonrpc-batch-response';
-export * from './jsonrpc-notification';
-export * from './jsonrpc-request';
-export * from './jsonrpc-response';
+export * from './jsonrpc-error';
 
 export * from './call-tool-request';
 export * from './call-tool-result';

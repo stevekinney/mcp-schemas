@@ -47,8 +47,6 @@ All schemas are available as named exports:
 import {
   listResourcesRequestSchema,
   callToolResultSchema,
-  annotationsSchema,
-  jsonrpcBatchResponseSchema,
   // ...etc
 } from 'mcp-schemas';
 ```
