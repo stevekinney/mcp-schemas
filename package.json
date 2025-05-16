@@ -19,7 +19,7 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "bun": "./dist/bun/index.ts"
+      "bun": "./dist/bun/index.js"
     }
   },
   "scripts": {

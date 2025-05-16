@@ -1,15 +1,18 @@
 {
-  "extends": "./tsconfig.json",
   "compilerOptions": {
+    "lib": ["esnext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "dist",
     "noEmit": false,
-    "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
-    "moduleResolution": "node",
-    "verbatimModuleSyntax": false
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["**/*.test.ts", "**/*.spec.ts", "node_modules"]
