@@ -1,13 +1,13 @@
+import type { ZodType } from 'zod';
 import { z } from 'zod';
 import type { JSONRPCError } from '../schema';
-import type { ZodType } from 'zod';
-import { requestIdSchema } from './request-id';
 import { JSONRPC_VERSION_SCHEMA } from './constants';
+import { requestIdSchema } from './request-id';
 
 /**
  * A response to a request that indicates an error occurred.
  */
-export const jsonrpcErrorSchema = z.object({
+export const jsonRpcErrorSchema = z.object({
   jsonrpc: JSONRPC_VERSION_SCHEMA,
   id: requestIdSchema,
   error: z.object({

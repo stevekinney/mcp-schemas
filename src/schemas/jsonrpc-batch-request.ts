@@ -1,12 +1,12 @@
+import type { ZodType } from 'zod';
 import { z } from 'zod';
 import type { JSONRPCBatchRequest } from '../schema';
-import type { ZodType } from 'zod';
-import { jsonrpcRequestSchema } from './jsonrpc-request';
-import { jsonrpcNotificationSchema } from './jsonrpc-notification';
+import { jsonRpcNotificationSchema } from './jsonrpc-notification';
+import { jsonRpcRequestSchema } from './jsonrpc-request';
 
 /**
  * A JSON-RPC batch request, as described in https://www.jsonrpc.org/specification#batch.
  */
-export const jsonrpcBatchRequestSchema = z.array(
-  z.union([jsonrpcRequestSchema, jsonrpcNotificationSchema]),
+export const jsonRpcBatchRequestSchema = z.array(
+  z.union([jsonRpcRequestSchema, jsonRpcNotificationSchema]),
 ) satisfies ZodType<JSONRPCBatchRequest>;

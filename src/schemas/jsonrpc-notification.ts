@@ -6,6 +6,6 @@ import { notificationSchema } from './notification';
 /**
  * A notification which does not expect a response.
  */
-export const jsonrpcNotificationSchema = notificationSchema.extend({
+export const jsonRpcNotificationSchema = notificationSchema.extend({
   jsonrpc: JSONRPC_VERSION_SCHEMA,
 }) satisfies ZodType<JSONRPCNotification>;

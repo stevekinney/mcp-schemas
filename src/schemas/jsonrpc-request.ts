@@ -7,7 +7,7 @@ import { requestIdSchema } from './request-id';
 /**
  * A request that expects a response.
  */
-export const jsonrpcRequestSchema = requestSchema.extend({
+export const jsonRpcRequestSchema = requestSchema.extend({
   jsonrpc: JSONRPC_VERSION_SCHEMA,
   id: requestIdSchema,
 }) satisfies ZodType<JSONRPCRequest>;
