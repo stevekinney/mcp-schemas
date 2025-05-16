@@ -1213,6 +1213,29 @@ export interface RootsListChangedNotification extends Notification {
   method: "notifications/roots/list_changed";
 }
 
+/**
+ * An example notification for demonstration purposes.
+ */
+export interface ExampleNotification extends Notification {
+  method: "notifications/example";
+  params: {
+    /**
+     * A message to be displayed to the user.
+     */
+    message: string;
+
+    /**
+     * An optional timestamp for when the notification was created.
+     */
+    timestamp?: number;
+
+    /**
+     * Severity level of the notification.
+     */
+    severity: "info" | "warning" | "error";
+  };
+}
+
 /* Client messages */
 export type ClientRequest =
   | PingRequest
@@ -1250,7 +1273,8 @@ export type ServerNotification =
   | ResourceUpdatedNotification
   | ResourceListChangedNotification
   | ToolListChangedNotification
-  | PromptListChangedNotification;
+  | PromptListChangedNotification
+  | ExampleNotification;
 
 export type ServerResult =
   | EmptyResult

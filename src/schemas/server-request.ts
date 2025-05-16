@@ -9,11 +9,7 @@ import { listRootsRequestSchema } from "./list-roots-request";
  */
 // Explicitly define ServerRequest schema with proper method values
 const serverRequestSchema = z.object({
-  method: z.enum([
-    "ping",
-    "sampling/createMessage",
-    "roots/list"
-  ]),
+  method: z.enum(["ping", "sampling/createMessage", "roots/list"]),
   params: z.object({}).passthrough().optional(),
 });
 

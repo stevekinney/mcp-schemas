@@ -32,7 +32,7 @@ const clientRequestSchema = z.object({
     "resources/subscribe",
     "resources/unsubscribe",
     "tools/call",
-    "tools/list"
+    "tools/list",
   ]),
   params: z.object({}).passthrough().optional(),
 });

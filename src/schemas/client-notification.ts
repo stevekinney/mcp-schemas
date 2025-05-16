@@ -11,10 +11,10 @@ import { rootsListChangedNotificationSchema } from "./roots-list-changed-notific
 // Explicitly define ClientNotification schema with proper method values
 const clientNotificationSchema = z.object({
   method: z.enum([
-    "notifications/cancelled", 
-    "notifications/progress", 
-    "notifications/initialized", 
-    "notifications/roots/list_changed"
+    "notifications/cancelled",
+    "notifications/progress",
+    "notifications/initialized",
+    "notifications/roots/list_changed",
   ]),
   params: z.object({}).passthrough().optional(),
 });
@@ -31,6 +31,8 @@ const runtimeValidationSchema = z.union([
 ]);
 
 // Add a type guard function for runtime validation
-export function isClientNotification(value: unknown): value is ClientNotification {
+export function isClientNotification(
+  value: unknown,
+): value is ClientNotification {
   return runtimeValidationSchema.safeParse(value).success;
 }
