@@ -4,6 +4,14 @@
   "description": "Schemas for Model Context Protocol servers",
   "license": "MIT",
   "type": "module",
+  "author": {
+    "name": "Steve Kinney",
+    "email": "hello@stevekinney.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevekinney/mcp-schemas.git"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
