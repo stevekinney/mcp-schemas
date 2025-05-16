@@ -4,7 +4,7 @@ import type { Notification } from '../schema';
 /**
  * Defines a basic notification object in the MCP protocol.
  */
-export const notificationSchema: z.ZodType<Notification> = z.object({
+export const notificationSchema = z.object({
   method: z.string(),
   params: z.optional(
     z
@@ -16,4 +16,4 @@ export const notificationSchema: z.ZodType<Notification> = z.object({
       })
       .catchall(z.unknown()),
   ),
-});
+}) satisfies z.ZodType<Notification>;
