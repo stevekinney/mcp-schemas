@@ -23,4 +23,4 @@ export const requestSchema = z.object({
       })
       .catchall(z.unknown()),
   ),
-});
+}) satisfies z.ZodType<Request>;

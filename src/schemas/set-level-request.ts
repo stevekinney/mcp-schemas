@@ -1,4 +1,4 @@
-import { z, type ZodType } from 'zod';
+import { type ZodType } from 'zod';
 import type { SetLevelRequest } from '../schema';
 import { withRequest } from '../utilities';
 import { loggingLevelParam } from './common-params';

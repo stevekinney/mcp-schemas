@@ -1,4 +1,4 @@
-import { z, type ZodType } from 'zod';
+import { type ZodType } from 'zod';
 import type { PingRequest } from '../schema';
 import { withRequest } from '../utilities';
 

@@ -1,19 +1,61 @@
 {
   "name": "mcp-schemas",
-  "module": "index.ts",
+  "version": "0.0.1",
+  "description": "Schemas for Model Context Protocol servers",
+  "license": "MIT",
   "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "bun": "./dist/bun/index.ts"
+    }
+  },
   "scripts": {
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --fix .",
+    "build": "bun run build.ts",
+    "prepack": "bun run verify && bun run build",
+    "prepublishOnly": "bun run verify && bun run build",
+    "prepare": "husky",
+    "verify": "bun run format && bun run lint && bun run typecheck"
   },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "devDependencies": {
+    "@eslint/js": "^9.27.0",
     "@types/bun": "latest",
-    "prettier": "^3.5.3"
+    "chalk": "^5.4.1",
+    "eslint": "^9.27.0",
+    "eslint-plugin-prettier": "^5.4.0",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "globals": "^16.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript-eslint": "^8.32.1"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
     "zod": "^3.24.4"
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.json": [
+      "prettier --write"
+    ]
   }
 }
