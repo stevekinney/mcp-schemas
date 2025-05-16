@@ -9,9 +9,9 @@ import { rootsListChangedNotificationSchema } from "./roots-list-changed-notific
 /**
  * Union of all possible client notifications.
  */
-export const clientNotificationSchema = z.union([
+export const clientNotificationSchema: ZodType<ClientNotification> = z.union([
   cancelledNotificationSchema,
   progressNotificationSchema,
   initializedNotificationSchema,
   rootsListChangedNotificationSchema,
-]) as unknown as ZodType<ClientNotification>;
+]);

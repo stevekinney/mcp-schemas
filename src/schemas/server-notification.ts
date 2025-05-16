@@ -12,7 +12,7 @@ import { promptListChangedNotificationSchema } from "./prompt-list-changed-notif
 /**
  * Union of all possible server notifications.
  */
-export const serverNotificationSchema = z.union([
+export const serverNotificationSchema: ZodType<ServerNotification> = z.union([
   cancelledNotificationSchema,
   progressNotificationSchema,
   loggingMessageNotificationSchema,
@@ -20,4 +20,4 @@ export const serverNotificationSchema = z.union([
   resourceListChangedNotificationSchema,
   toolListChangedNotificationSchema,
   promptListChangedNotificationSchema,
-]) as unknown as ZodType<ServerNotification>;
+]);

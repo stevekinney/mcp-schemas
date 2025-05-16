@@ -8,8 +8,8 @@ import { listRootsRequestSchema } from "./list-roots-request";
 /**
  * Union of all possible server requests.
  */
-export const serverRequestSchema = z.union([
+export const serverRequestSchema: ZodType<ServerRequest> = z.union([
   pingRequestSchema,
   createMessageRequestSchema,
   listRootsRequestSchema,
-]) as unknown as ZodType<ServerRequest>;
+]);

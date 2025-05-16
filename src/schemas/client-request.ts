@@ -18,7 +18,7 @@ import { listToolsRequestSchema } from "./list-tools-request";
 /**
  * Union of all possible client requests.
  */
-export const clientRequestSchema = z.union([
+export const clientRequestSchema: ZodType<ClientRequest> = z.union([
   pingRequestSchema,
   initializeRequestSchema,
   completeRequestSchema,
@@ -32,4 +32,4 @@ export const clientRequestSchema = z.union([
   unsubscribeRequestSchema,
   callToolRequestSchema,
   listToolsRequestSchema,
-]) as unknown as ZodType<ClientRequest>;
+]);
