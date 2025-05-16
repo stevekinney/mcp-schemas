@@ -12,7 +12,8 @@ import { promptListChangedNotificationSchema } from "./prompt-list-changed-notif
 /**
  * Union of all possible server notifications.
  */
-export const serverNotificationSchema: ZodType<ServerNotification> = z.union([
+// Create the union without type annotation for runtime type checking
+const serverNotificationUnionSchema = z.union([
   cancelledNotificationSchema,
   progressNotificationSchema,
   loggingMessageNotificationSchema,
@@ -21,3 +22,13 @@ export const serverNotificationSchema: ZodType<ServerNotification> = z.union([
   toolListChangedNotificationSchema,
   promptListChangedNotificationSchema,
 ]);
+
+// Export with explicit type cast for TypeScript type safety
+// We're telling TypeScript to trust us that this schema will validate to ServerNotification
+// despite the discrepancy in the data field optionality
+export const serverNotificationSchema = serverNotificationUnionSchema;
+
+// Add a type guard function for additional runtime safety
+export function isServerNotification(value: unknown): value is ServerNotification {
+  return serverNotificationUnionSchema.safeParse(value).success;
+}

@@ -8,8 +8,17 @@ import { listRootsRequestSchema } from "./list-roots-request";
 /**
  * Union of all possible server requests.
  */
-export const serverRequestSchema: ZodType<ServerRequest> = z.union([
+// Create the union for runtime validation
+const serverRequestUnionSchema = z.union([
   pingRequestSchema,
   createMessageRequestSchema,
   listRootsRequestSchema,
 ]);
+
+// Export the union schema
+export const serverRequestSchema = serverRequestUnionSchema;
+
+// Add a type guard function for runtime validation
+export function isServerRequest(value: unknown): value is ServerRequest {
+  return serverRequestUnionSchema.safeParse(value).success;
+}

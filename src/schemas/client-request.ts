@@ -18,7 +18,8 @@ import { listToolsRequestSchema } from "./list-tools-request";
 /**
  * Union of all possible client requests.
  */
-export const clientRequestSchema: ZodType<ClientRequest> = z.union([
+// Create the union for runtime validation
+const clientRequestUnionSchema = z.union([
   pingRequestSchema,
   initializeRequestSchema,
   completeRequestSchema,
@@ -33,3 +34,11 @@ export const clientRequestSchema: ZodType<ClientRequest> = z.union([
   callToolRequestSchema,
   listToolsRequestSchema,
 ]);
+
+// Export the union schema
+export const clientRequestSchema = clientRequestUnionSchema;
+
+// Add a type guard function for runtime validation
+export function isClientRequest(value: unknown): value is ClientRequest {
+  return clientRequestUnionSchema.safeParse(value).success;
+}

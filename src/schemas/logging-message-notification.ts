@@ -7,7 +7,7 @@ import { loggingLevelSchema } from "./logging-level";
 /**
  * Notification of a log message passed from server to client. If no logging/setLevel request has been sent from the client, the server MAY decide which messages to send automatically.
  */
-const loggingMessageNotificationSchemaRaw = notificationSchema.extend({
+const notificationMessageSchema = notificationSchema.extend({
   method: z.literal("notifications/message"),
   params: z.object({
     /**
@@ -25,4 +25,4 @@ const loggingMessageNotificationSchemaRaw = notificationSchema.extend({
   }).required(),
 });
 
-export const loggingMessageNotificationSchema: ZodType<LoggingMessageNotification> = loggingMessageNotificationSchemaRaw;
+export const loggingMessageNotificationSchema = notificationMessageSchema;

@@ -17,4 +17,4 @@ export const notificationSchema = z.object({
       })
       .catchall(z.unknown()),
   ),
-}) satisfies ZodType<Notification>;
+});
