@@ -2,7 +2,6 @@
 
 [![License][license-badge]][license]
 [![npm version](https://img.shields.io/npm/v/mcp-schemas.svg)](https://www.npmjs.com/package/mcp-schemas)
-[![npm version](https://img.shields.io/npm/v/mcp-schemas.svg)](https://www.npmjs.com/package/mcp-schemas)
 
 > Type-safe TypeScript + Zod schemas for the Model Context Protocol (MCP)
 
@@ -56,15 +55,20 @@ import {
 
 ## 📚 Features
 
-- **✅ Complete Protocol Coverage**
-  - Supports all request/response/notification types in MCP
-  - Includes JSON-RPC 2.0 constructs: batch, error, notification, etc.
-- **🧪 Runtime Validation**
-  - Zod-based runtime validation for every protocol structure
-  - Use `schema.safeParse(...)` or `.parse(...)` to validate data
-- **🔧 Type-safe Extensibility**
-  - Modular and type-driven
-  - Compose new request types easily with `withRequest()` and `withNotification()`
+**✅ Complete Protocol Coverage**
+
+- Supports all request/response/notification types in MCP
+- Includes JSON-RPC 2.0 constructs: batch, error, notification, etc.
+
+**🧪 Runtime Validation**
+
+- Zod-based runtime validation for every protocol structure
+- Use `schema.safeParse(...)` or `.parse(...)` to validate data
+
+**🔧 Type-safe Extensibility**
+
+- Modular and type-driven
+- Compose new request types easily with `withRequest()` and `withNotification()`
 
 ## 🛠️ Development
 
