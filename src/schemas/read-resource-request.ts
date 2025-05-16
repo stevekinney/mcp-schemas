@@ -1,13 +1,12 @@
-import { z } from "zod";
-import type { ReadResourceRequest } from "../schema";
-import { ZodType } from "zod";
-import { withRequest } from "./utils";
-import { uriParam } from "./common-params";
+import { z, ZodType } from 'zod';
+import type { ReadResourceRequest } from '../schema';
+import { withRequest } from '../utilities';
+import { uriParam } from './common-params';
 
 /**
  * Sent from the client to the server, to read a specific resource URI.
  */
 export const readResourceRequestSchema = withRequest(
-  "resources/read",
+  'resources/read',
   uriParam,
 ) satisfies ZodType<ReadResourceRequest>;

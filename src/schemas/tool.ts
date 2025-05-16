@@ -32,3 +32,12 @@ export const toolSchema = z.object({
    */
   annotations: z.optional(toolAnnotationsSchema),
 }) satisfies ZodType<Tool>;
+
+/**
+ * Type guard function for validating if a value is a Tool
+ * @param value - The value to check
+ * @returns True if the value matches the Tool schema
+ */
+export function isTool(value: unknown): value is Tool {
+  return toolSchema.safeParse(value).success;
+}

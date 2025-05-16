@@ -20,3 +20,12 @@ export const promptSchema = z.object({
    */
   arguments: z.optional(z.array(promptArgumentSchema)),
 }) satisfies ZodType<Prompt>;
+
+/**
+ * Type guard function for validating if a value is a Prompt
+ * @param value - The value to check
+ * @returns True if the value matches the Prompt schema
+ */
+export function isPrompt(value: unknown): value is Prompt {
+  return promptSchema.safeParse(value).success;
+}

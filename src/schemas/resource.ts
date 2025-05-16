@@ -38,3 +38,12 @@ export const resourceSchema = z.object({
    */
   size: z.optional(z.number()),
 }) satisfies ZodType<Resource>;
+
+/**
+ * Type guard function for validating if a value is a Resource
+ * @param value - The value to check
+ * @returns True if the value matches the Resource schema
+ */
+export function isResource(value: unknown): value is Resource {
+  return resourceSchema.safeParse(value).success;
+}

@@ -22,3 +22,12 @@ export const annotationsSchema = z.object({
    */
   priority: z.optional(z.number().min(0).max(1)),
 }) satisfies ZodType<Annotations>;
+
+/**
+ * Type guard function for validating if a value is an Annotations object
+ * @param value - The value to check
+ * @returns True if the value matches the Annotations schema
+ */
+export function isAnnotations(value: unknown): value is Annotations {
+  return annotationsSchema.safeParse(value).success;
+}

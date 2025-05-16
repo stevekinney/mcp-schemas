@@ -1,5 +1,5 @@
-import { z } from "zod";
-import type { Request, Notification } from "../schema";
+import { z } from 'zod';
+import type { Notification, Request } from './schema';
 
 /**
  * Creates a request schema with a specific method and params

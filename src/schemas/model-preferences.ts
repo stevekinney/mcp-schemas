@@ -46,3 +46,12 @@ export const modelPreferencesSchema = z.object({
    */
   intelligencePriority: z.optional(z.number().min(0).max(1)),
 }) satisfies ZodType<ModelPreferences>;
+
+/**
+ * Type guard function for validating if a value is a ModelPreferences object
+ * @param value - The value to check
+ * @returns True if the value matches the ModelPreferences schema
+ */
+export function isModelPreferences(value: unknown): value is ModelPreferences {
+  return modelPreferencesSchema.safeParse(value).success;
+}
