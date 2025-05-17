@@ -20,6 +20,441 @@
       "bun": "./src/index.ts",
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./server-result": {
+      "bun": "./src/schemas/server-result.ts",
+      "types": "./dist/schemas/server-result.d.ts",
+      "import": "./dist/schemas/server-result.js"
+    },
+    "./client-request": {
+      "bun": "./src/schemas/client-request.ts",
+      "types": "./dist/schemas/client-request.d.ts",
+      "import": "./dist/schemas/client-request.js"
+    },
+    "./jsonrpc-error": {
+      "bun": "./src/schemas/jsonrpc-error.ts",
+      "types": "./dist/schemas/jsonrpc-error.d.ts",
+      "import": "./dist/schemas/jsonrpc-error.js"
+    },
+    "./common-params": {
+      "bun": "./src/schemas/common-params.ts",
+      "types": "./dist/schemas/common-params.d.ts",
+      "import": "./dist/schemas/common-params.js"
+    },
+    "./cursor": {
+      "bun": "./src/schemas/cursor.ts",
+      "types": "./dist/schemas/cursor.d.ts",
+      "import": "./dist/schemas/cursor.js"
+    },
+    "./unsubscribe-request": {
+      "bun": "./src/schemas/unsubscribe-request.ts",
+      "types": "./dist/schemas/unsubscribe-request.d.ts",
+      "import": "./dist/schemas/unsubscribe-request.js"
+    },
+    "./list-prompts-result": {
+      "bun": "./src/schemas/list-prompts-result.ts",
+      "types": "./dist/schemas/list-prompts-result.d.ts",
+      "import": "./dist/schemas/list-prompts-result.js"
+    },
+    "./complete-result": {
+      "bun": "./src/schemas/complete-result.ts",
+      "types": "./dist/schemas/complete-result.d.ts",
+      "import": "./dist/schemas/complete-result.js"
+    },
+    "./jsonrpc-notification": {
+      "bun": "./src/schemas/jsonrpc-notification.ts",
+      "types": "./dist/schemas/jsonrpc-notification.d.ts",
+      "import": "./dist/schemas/jsonrpc-notification.js"
+    },
+    "./resource-template": {
+      "bun": "./src/schemas/resource-template.ts",
+      "types": "./dist/schemas/resource-template.d.ts",
+      "import": "./dist/schemas/resource-template.js"
+    },
+    "./tool": {
+      "bun": "./src/schemas/tool.ts",
+      "types": "./dist/schemas/tool.d.ts",
+      "import": "./dist/schemas/tool.js"
+    },
+    "./create-message-result": {
+      "bun": "./src/schemas/create-message-result.ts",
+      "types": "./dist/schemas/create-message-result.d.ts",
+      "import": "./dist/schemas/create-message-result.js"
+    },
+    "./jsonrpc-batch-request": {
+      "bun": "./src/schemas/jsonrpc-batch-request.ts",
+      "types": "./dist/schemas/jsonrpc-batch-request.d.ts",
+      "import": "./dist/schemas/jsonrpc-batch-request.js"
+    },
+    "./request-id": {
+      "bun": "./src/schemas/request-id.ts",
+      "types": "./dist/schemas/request-id.d.ts",
+      "import": "./dist/schemas/request-id.js"
+    },
+    "./annotations": {
+      "bun": "./src/schemas/annotations.ts",
+      "types": "./dist/schemas/annotations.d.ts",
+      "import": "./dist/schemas/annotations.js"
+    },
+    "./prompt-message": {
+      "bun": "./src/schemas/prompt-message.ts",
+      "types": "./dist/schemas/prompt-message.d.ts",
+      "import": "./dist/schemas/prompt-message.js"
+    },
+    "./progress-token": {
+      "bun": "./src/schemas/progress-token.ts",
+      "types": "./dist/schemas/progress-token.d.ts",
+      "import": "./dist/schemas/progress-token.js"
+    },
+    "./model-hint": {
+      "bun": "./src/schemas/model-hint.ts",
+      "types": "./dist/schemas/model-hint.d.ts",
+      "import": "./dist/schemas/model-hint.js"
+    },
+    "./list-resources-result": {
+      "bun": "./src/schemas/list-resources-result.ts",
+      "types": "./dist/schemas/list-resources-result.d.ts",
+      "import": "./dist/schemas/list-resources-result.js"
+    },
+    "./root": {
+      "bun": "./src/schemas/root.ts",
+      "types": "./dist/schemas/root.d.ts",
+      "import": "./dist/schemas/root.js"
+    },
+    "./client-capabilities": {
+      "bun": "./src/schemas/client-capabilities.ts",
+      "types": "./dist/schemas/client-capabilities.d.ts",
+      "import": "./dist/schemas/client-capabilities.js"
+    },
+    "./ping-request": {
+      "bun": "./src/schemas/ping-request.ts",
+      "types": "./dist/schemas/ping-request.d.ts",
+      "import": "./dist/schemas/ping-request.js"
+    },
+    "./prompt": {
+      "bun": "./src/schemas/prompt.ts",
+      "types": "./dist/schemas/prompt.d.ts",
+      "import": "./dist/schemas/prompt.js"
+    },
+    "./list-resource-templates-result": {
+      "bun": "./src/schemas/list-resource-templates-result.ts",
+      "types": "./dist/schemas/list-resource-templates-result.d.ts",
+      "import": "./dist/schemas/list-resource-templates-result.js"
+    },
+    "./initialized-notification": {
+      "bun": "./src/schemas/initialized-notification.ts",
+      "types": "./dist/schemas/initialized-notification.d.ts",
+      "import": "./dist/schemas/initialized-notification.js"
+    },
+    "./tool-annotations": {
+      "bun": "./src/schemas/tool-annotations.ts",
+      "types": "./dist/schemas/tool-annotations.d.ts",
+      "import": "./dist/schemas/tool-annotations.js"
+    },
+    "./paginated-request": {
+      "bun": "./src/schemas/paginated-request.ts",
+      "types": "./dist/schemas/paginated-request.d.ts",
+      "import": "./dist/schemas/paginated-request.js"
+    },
+    "./blob-resource-contents": {
+      "bun": "./src/schemas/blob-resource-contents.ts",
+      "types": "./dist/schemas/blob-resource-contents.d.ts",
+      "import": "./dist/schemas/blob-resource-contents.js"
+    },
+    "./read-resource-result": {
+      "bun": "./src/schemas/read-resource-result.ts",
+      "types": "./dist/schemas/read-resource-result.d.ts",
+      "import": "./dist/schemas/read-resource-result.js"
+    },
+    "./implementation": {
+      "bun": "./src/schemas/implementation.ts",
+      "types": "./dist/schemas/implementation.d.ts",
+      "import": "./dist/schemas/implementation.js"
+    },
+    "./prompt-argument": {
+      "bun": "./src/schemas/prompt-argument.ts",
+      "types": "./dist/schemas/prompt-argument.d.ts",
+      "import": "./dist/schemas/prompt-argument.js"
+    },
+    "./resource-reference": {
+      "bun": "./src/schemas/resource-reference.ts",
+      "types": "./dist/schemas/resource-reference.d.ts",
+      "import": "./dist/schemas/resource-reference.js"
+    },
+    "./prompt-reference": {
+      "bun": "./src/schemas/prompt-reference.ts",
+      "types": "./dist/schemas/prompt-reference.d.ts",
+      "import": "./dist/schemas/prompt-reference.js"
+    },
+    "./logging-message-notification": {
+      "bun": "./src/schemas/logging-message-notification.ts",
+      "types": "./dist/schemas/logging-message-notification.d.ts",
+      "import": "./dist/schemas/logging-message-notification.js"
+    },
+    "./complete-request": {
+      "bun": "./src/schemas/complete-request.ts",
+      "types": "./dist/schemas/complete-request.d.ts",
+      "import": "./dist/schemas/complete-request.js"
+    },
+    "./jsonrpc-response": {
+      "bun": "./src/schemas/jsonrpc-response.ts",
+      "types": "./dist/schemas/jsonrpc-response.d.ts",
+      "import": "./dist/schemas/jsonrpc-response.js"
+    },
+    "./list-roots-request": {
+      "bun": "./src/schemas/list-roots-request.ts",
+      "types": "./dist/schemas/list-roots-request.d.ts",
+      "import": "./dist/schemas/list-roots-request.js"
+    },
+    "./list-resource-templates-request": {
+      "bun": "./src/schemas/list-resource-templates-request.ts",
+      "types": "./dist/schemas/list-resource-templates-request.d.ts",
+      "import": "./dist/schemas/list-resource-templates-request.js"
+    },
+    "./result": {
+      "bun": "./src/schemas/result.ts",
+      "types": "./dist/schemas/result.d.ts",
+      "import": "./dist/schemas/result.js"
+    },
+    "./prompt-list-changed-notification": {
+      "bun": "./src/schemas/prompt-list-changed-notification.ts",
+      "types": "./dist/schemas/prompt-list-changed-notification.d.ts",
+      "import": "./dist/schemas/prompt-list-changed-notification.js"
+    },
+    "./server-capabilities": {
+      "bun": "./src/schemas/server-capabilities.ts",
+      "types": "./dist/schemas/server-capabilities.d.ts",
+      "import": "./dist/schemas/server-capabilities.js"
+    },
+    "./initialize-request": {
+      "bun": "./src/schemas/initialize-request.ts",
+      "types": "./dist/schemas/initialize-request.d.ts",
+      "import": "./dist/schemas/initialize-request.js"
+    },
+    "./sampling-message": {
+      "bun": "./src/schemas/sampling-message.ts",
+      "types": "./dist/schemas/sampling-message.d.ts",
+      "import": "./dist/schemas/sampling-message.js"
+    },
+    "./resource-list-changed-notification": {
+      "bun": "./src/schemas/resource-list-changed-notification.ts",
+      "types": "./dist/schemas/resource-list-changed-notification.d.ts",
+      "import": "./dist/schemas/resource-list-changed-notification.js"
+    },
+    "./jsonrpc-message": {
+      "bun": "./src/schemas/jsonrpc-message.ts",
+      "types": "./dist/schemas/jsonrpc-message.d.ts",
+      "import": "./dist/schemas/jsonrpc-message.js"
+    },
+    "./jsonrpc-request": {
+      "bun": "./src/schemas/jsonrpc-request.ts",
+      "types": "./dist/schemas/jsonrpc-request.d.ts",
+      "import": "./dist/schemas/jsonrpc-request.js"
+    },
+    "./empty-result": {
+      "bun": "./src/schemas/empty-result.ts",
+      "types": "./dist/schemas/empty-result.d.ts",
+      "import": "./dist/schemas/empty-result.js"
+    },
+    "./subscribe-request": {
+      "bun": "./src/schemas/subscribe-request.ts",
+      "types": "./dist/schemas/subscribe-request.d.ts",
+      "import": "./dist/schemas/subscribe-request.js"
+    },
+    "./role": {
+      "bun": "./src/schemas/role.ts",
+      "types": "./dist/schemas/role.d.ts",
+      "import": "./dist/schemas/role.js"
+    },
+    "./cancelled-notification": {
+      "bun": "./src/schemas/cancelled-notification.ts",
+      "types": "./dist/schemas/cancelled-notification.d.ts",
+      "import": "./dist/schemas/cancelled-notification.js"
+    },
+    "./create-message-request": {
+      "bun": "./src/schemas/create-message-request.ts",
+      "types": "./dist/schemas/create-message-request.d.ts",
+      "import": "./dist/schemas/create-message-request.js"
+    },
+    "./model-preferences": {
+      "bun": "./src/schemas/model-preferences.ts",
+      "types": "./dist/schemas/model-preferences.d.ts",
+      "import": "./dist/schemas/model-preferences.js"
+    },
+    "./text-content": {
+      "bun": "./src/schemas/text-content.ts",
+      "types": "./dist/schemas/text-content.d.ts",
+      "import": "./dist/schemas/text-content.js"
+    },
+    "./request": {
+      "bun": "./src/schemas/request.ts",
+      "types": "./dist/schemas/request.d.ts",
+      "import": "./dist/schemas/request.js"
+    },
+    "./paginated-result": {
+      "bun": "./src/schemas/paginated-result.ts",
+      "types": "./dist/schemas/paginated-result.d.ts",
+      "import": "./dist/schemas/paginated-result.js"
+    },
+    "./resource": {
+      "bun": "./src/schemas/resource.ts",
+      "types": "./dist/schemas/resource.d.ts",
+      "import": "./dist/schemas/resource.js"
+    },
+    "./list-prompts-request": {
+      "bun": "./src/schemas/list-prompts-request.ts",
+      "types": "./dist/schemas/list-prompts-request.d.ts",
+      "import": "./dist/schemas/list-prompts-request.js"
+    },
+    "./resource-contents": {
+      "bun": "./src/schemas/resource-contents.ts",
+      "types": "./dist/schemas/resource-contents.d.ts",
+      "import": "./dist/schemas/resource-contents.js"
+    },
+    "./constants": {
+      "bun": "./src/schemas/constants.ts",
+      "types": "./dist/schemas/constants.d.ts",
+      "import": "./dist/schemas/constants.js"
+    },
+    "./read-resource-request": {
+      "bun": "./src/schemas/read-resource-request.ts",
+      "types": "./dist/schemas/read-resource-request.d.ts",
+      "import": "./dist/schemas/read-resource-request.js"
+    },
+    "./logging-level": {
+      "bun": "./src/schemas/logging-level.ts",
+      "types": "./dist/schemas/logging-level.d.ts",
+      "import": "./dist/schemas/logging-level.js"
+    },
+    "./server-notification": {
+      "bun": "./src/schemas/server-notification.ts",
+      "types": "./dist/schemas/server-notification.d.ts",
+      "import": "./dist/schemas/server-notification.js"
+    },
+    "./embedded-resource": {
+      "bun": "./src/schemas/embedded-resource.ts",
+      "types": "./dist/schemas/embedded-resource.d.ts",
+      "import": "./dist/schemas/embedded-resource.js"
+    },
+    "./list-resources-request": {
+      "bun": "./src/schemas/list-resources-request.ts",
+      "types": "./dist/schemas/list-resources-request.d.ts",
+      "import": "./dist/schemas/list-resources-request.js"
+    },
+    "./set-level-request": {
+      "bun": "./src/schemas/set-level-request.ts",
+      "types": "./dist/schemas/set-level-request.d.ts",
+      "import": "./dist/schemas/set-level-request.js"
+    },
+    "./get-prompt-request": {
+      "bun": "./src/schemas/get-prompt-request.ts",
+      "types": "./dist/schemas/get-prompt-request.d.ts",
+      "import": "./dist/schemas/get-prompt-request.js"
+    },
+    "./notification": {
+      "bun": "./src/schemas/notification.ts",
+      "types": "./dist/schemas/notification.d.ts",
+      "import": "./dist/schemas/notification.js"
+    },
+    "./list-tools-result": {
+      "bun": "./src/schemas/list-tools-result.ts",
+      "types": "./dist/schemas/list-tools-result.d.ts",
+      "import": "./dist/schemas/list-tools-result.js"
+    },
+    "./list-roots-result": {
+      "bun": "./src/schemas/list-roots-result.ts",
+      "types": "./dist/schemas/list-roots-result.d.ts",
+      "import": "./dist/schemas/list-roots-result.js"
+    },
+    "./call-tool-result": {
+      "bun": "./src/schemas/call-tool-result.ts",
+      "types": "./dist/schemas/call-tool-result.d.ts",
+      "import": "./dist/schemas/call-tool-result.js"
+    },
+    "./content-schemas": {
+      "bun": "./src/schemas/content-schemas.ts",
+      "types": "./dist/schemas/content-schemas.d.ts",
+      "import": "./dist/schemas/content-schemas.js"
+    },
+    "./list-tools-request": {
+      "bun": "./src/schemas/list-tools-request.ts",
+      "types": "./dist/schemas/list-tools-request.d.ts",
+      "import": "./dist/schemas/list-tools-request.js"
+    },
+    "./get-prompt-result": {
+      "bun": "./src/schemas/get-prompt-result.ts",
+      "types": "./dist/schemas/get-prompt-result.d.ts",
+      "import": "./dist/schemas/get-prompt-result.js"
+    },
+    "./tool-list-changed-notification": {
+      "bun": "./src/schemas/tool-list-changed-notification.ts",
+      "types": "./dist/schemas/tool-list-changed-notification.d.ts",
+      "import": "./dist/schemas/tool-list-changed-notification.js"
+    },
+    "./call-tool-request": {
+      "bun": "./src/schemas/call-tool-request.ts",
+      "types": "./dist/schemas/call-tool-request.d.ts",
+      "import": "./dist/schemas/call-tool-request.js"
+    },
+    "./index": {
+      "bun": "./src/schemas/index.ts",
+      "types": "./dist/schemas/index.d.ts",
+      "import": "./dist/schemas/index.js"
+    },
+    "./jsonrpc-batch-response": {
+      "bun": "./src/schemas/jsonrpc-batch-response.ts",
+      "types": "./dist/schemas/jsonrpc-batch-response.d.ts",
+      "import": "./dist/schemas/jsonrpc-batch-response.js"
+    },
+    "./text-resource-contents": {
+      "bun": "./src/schemas/text-resource-contents.ts",
+      "types": "./dist/schemas/text-resource-contents.d.ts",
+      "import": "./dist/schemas/text-resource-contents.js"
+    },
+    "./image-content": {
+      "bun": "./src/schemas/image-content.ts",
+      "types": "./dist/schemas/image-content.d.ts",
+      "import": "./dist/schemas/image-content.js"
+    },
+    "./audio-content": {
+      "bun": "./src/schemas/audio-content.ts",
+      "types": "./dist/schemas/audio-content.d.ts",
+      "import": "./dist/schemas/audio-content.js"
+    },
+    "./client-notification": {
+      "bun": "./src/schemas/client-notification.ts",
+      "types": "./dist/schemas/client-notification.d.ts",
+      "import": "./dist/schemas/client-notification.js"
+    },
+    "./initialize-result": {
+      "bun": "./src/schemas/initialize-result.ts",
+      "types": "./dist/schemas/initialize-result.d.ts",
+      "import": "./dist/schemas/initialize-result.js"
+    },
+    "./resource-updated-notification": {
+      "bun": "./src/schemas/resource-updated-notification.ts",
+      "types": "./dist/schemas/resource-updated-notification.d.ts",
+      "import": "./dist/schemas/resource-updated-notification.js"
+    },
+    "./roots-list-changed-notification": {
+      "bun": "./src/schemas/roots-list-changed-notification.ts",
+      "types": "./dist/schemas/roots-list-changed-notification.d.ts",
+      "import": "./dist/schemas/roots-list-changed-notification.js"
+    },
+    "./server-request": {
+      "bun": "./src/schemas/server-request.ts",
+      "types": "./dist/schemas/server-request.d.ts",
+      "import": "./dist/schemas/server-request.js"
+    },
+    "./progress-notification": {
+      "bun": "./src/schemas/progress-notification.ts",
+      "types": "./dist/schemas/progress-notification.d.ts",
+      "import": "./dist/schemas/progress-notification.js"
+    },
+    "./client-result": {
+      "bun": "./src/schemas/client-result.ts",
+      "types": "./dist/schemas/client-result.d.ts",
+      "import": "./dist/schemas/client-result.js"
     }
   },
   "scripts": {
@@ -29,7 +464,8 @@
     "build": "bun run build.ts",
     "prepack": "bun run verify && bun run build",
     "prepare": "husky",
-    "verify": "bun run format && bun run lint && bun run typecheck"
+    "verify": "bun run format && bun run lint && bun run typecheck",
+    "update:exports": "bun run scripts/update-exports.ts"
   },
   "files": [
     "dist",
