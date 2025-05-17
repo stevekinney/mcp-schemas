@@ -26,5 +26,6 @@
     "noPropertyAccessFromIndexSignature": false,
 
     "baseUrl": "./src"
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }
