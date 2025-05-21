@@ -9,5 +9,5 @@ export const blobResourceContentsSchema = resourceContentsSchema.extend({
   /**
    * A base64-encoded string representing the binary data of the item.
    */
-  blob: z.string(),
+  blob: z.string().base64(),
 }) satisfies ZodType<BlobResourceContents>;
