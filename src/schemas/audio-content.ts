@@ -10,7 +10,7 @@ export const audioContentSchema = z.object({
   /**
    * The base64-encoded audio data.
    */
-  data: z.string(),
+  data: z.string().base64(),
   /**
    * The MIME type of the audio. Different providers may support different audio types.
    */

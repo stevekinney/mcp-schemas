@@ -10,7 +10,7 @@ export const imageContentSchema = z.object({
   /**
    * The base64-encoded image data.
    */
-  data: z.string(),
+  data: z.string().base64(),
   /**
    * The MIME type of the image. Different providers may support different image types.
    */
